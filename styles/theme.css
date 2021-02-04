@@ -28,7 +28,7 @@ img {
 pre {
     padding: 0 16px;
     background: darkblue;
-    color: rgb(202, 200, 193) !important;
+    color: rgb(202, 200, 193);
     white-space: break-spaces;
 }
 .bgDarkblue {
@@ -75,6 +75,11 @@ pre {
 }
 
 .normalList { list-style: none; padding: 0; margin: 0;}
+.console { 
+    font-size: 0.7rem;    
+    color: rgb(202, 200, 193) !important;
+    background: darkblue;
+}
 
 .card {
     margin: 1rem;

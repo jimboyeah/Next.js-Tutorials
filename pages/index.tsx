@@ -7,7 +7,7 @@ import {FrontMetter, MetterKey, getPostSlugs, getPosts} from '../utils/api'
 
 const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
 export async function getStaticProps(context:any){
-  console.log('++++++++++++++++ Home getStaticProps', context);
+  console.log('++++++ Home getStaticProps', context);
   let mdFiles:{[folder:string]:FrontMetter[]} = {};
   let mdTree = getPostSlugs()
   mdFiles[mdTree.folder] = (getPosts(fields, mdTree.list, mdTree.folder))

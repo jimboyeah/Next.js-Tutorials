@@ -3,7 +3,7 @@ import {useRouter} from 'next/router'
 
 export default function Normal(props:any){
     const Router = useRouter()
-    console.log("-----------------route normal.tsx", props, Router);
+    console.log("------ route normal.tsx", props, Router);
     return (
     <>
     <Layout>
@@ -14,7 +14,7 @@ export default function Normal(props:any){
     )
 }
 // export async function getStaticProps(context: any) {
-//     console.log("+++++++++++++++getStaticcontext", context);
+//     console.log("++++++ getStaticcontext", context);
 //     return {
 //         props: {
 //             data: JSON.stringify(context)

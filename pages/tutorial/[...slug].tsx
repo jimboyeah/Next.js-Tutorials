@@ -44,7 +44,7 @@ export default function Markdown({post}: {post: FrontMetter}){
 type Params = { params: { slug: string[]|string } }
 
 export async function getStaticProps({ params }: Params) {
-  console.log("+++++++++++++++[...slug] getStaticProps", params);
+  console.log("++++++[...slug] getStaticProps", params);
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -78,7 +78,7 @@ export async function getStaticPaths(context:any) {
     )
   })
 
-  console.log("+++++++++++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
+  console.log("++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
   return {
     fallback: false,
     paths,
