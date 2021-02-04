@@ -1,0 +1,1964 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fle",
+				"flex"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"print",
+				"printer_abort"
+			],
+			[
+				"JSON",
+				"json_encode"
+			],
+			[
+				"FILE",
+				"_FILES"
+			],
+			[
+				"n",
+				"node_modules/"
+			],
+			[
+				"value",
+				"value4\tlet"
+			],
+			[
+				"con",
+				"console\tvar"
+			],
+			[
+				"LogL",
+				"LogLevelStrings\ttype"
+			],
+			[
+				"dra",
+				"green_apple_colored_pencil_drawing.jpg\tw:537 h:700"
+			],
+			[
+				"par",
+				"parseInt\tfunction"
+			],
+			[
+				"resu",
+				"result2\tlet"
+			],
+			[
+				"Par",
+				"Partial\ttype"
+			],
+			[
+				"ReactRou",
+				"ReactRouterDOM"
+			],
+			[
+				"ne",
+				"nextPuzzle"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"word",
+				"wordlist"
+			],
+			[
+				"qml",
+				"main.qml"
+			],
+			[
+				"p",
+				"plugins/"
+			],
+			[
+				"img",
+				"imageMat"
+			],
+			[
+				"lena",
+				"lena_thresh"
+			],
+			[
+				"chapp",
+				"ch_app.erl"
+			],
+			[
+				"wxMen",
+				"wxMenuBar"
+			],
+			[
+				"create",
+				"create_test_menu"
+			],
+			[
+				"ge",
+				"GenerateNames"
+			],
+			[
+				"I",
+				"IsStatic"
+			],
+			[
+				"lo",
+				"localhost.pfx"
+			],
+			[
+				"Hook",
+				"KeyboardHook"
+			],
+			[
+				"Hoo",
+				"HookStop"
+			],
+			[
+				"Ho",
+				"HookStart"
+			],
+			[
+				"int",
+				"Int32"
+			],
+			[
+				"PlaySoun",
+				"PlaySoundFlags"
+			],
+			[
+				"O",
+				"OpenFileDialog"
+			],
+			[
+				"From",
+				"Form1_Load"
+			],
+			[
+				"Form1",
+				"Form1_Load"
+			],
+			[
+				"Do",
+				"DoWorkStatic"
+			],
+			[
+				"S",
+				"Singletons"
+			],
+			[
+				"Test",
+				"TestClass"
+			],
+			[
+				"_",
+				"_count"
+			],
+			[
+				"Con",
+				"Contacts"
+			],
+			[
+				"up",
+				"upperCase"
+			],
+			[
+				"cli",
+				"on_button_clicked"
+			],
+			[
+				"height",
+				"max-height\tproperty"
+			],
+			[
+				"so",
+				"socket.io-client"
+			],
+			[
+				"En",
+				"EncodeToString\tfunc(src []byte) string ·ƒ"
+			],
+			[
+				"st",
+				"StdEncoding\t*base64.Encoding ·ν"
+			],
+			[
+				"Engin",
+				"EngineioMessage\tfunc(text string) ·ƒ"
+			],
+			[
+				"EIO",
+				"EIO_Message\tEngineioPacket ·Ɩ"
+			],
+			[
+				"SIO_Bin",
+				"SIO_Binary_Event\tSocketioPacket ·Ɩ"
+			],
+			[
+				"SIO",
+				"SIO_Event\tSocketioPacket ·Ɩ"
+			],
+			[
+				"U",
+				"Uint16\tfunc(b []byte) uint16 ·ƒ"
+			],
+			[
+				"Error",
+				"ErrorNil\tErrorCode ·Ɩ"
+			],
+			[
+				"Err",
+				"ErrorNil\tErrorCode ·Ɩ"
+			],
+			[
+				"Messa",
+				"MessageType\tbyte ·ʈ"
+			],
+			[
+				"E",
+				"Err\terror ·ν"
+			],
+			[
+				"e",
+				"Err\terror ·ν"
+			],
+			[
+				"b",
+				"brw\t*bufio.ReadWriter ·ν"
+			],
+			[
+				"Mi",
+				"Millisecond\ttime.Duration ·Ɩ"
+			],
+			[
+				"Webs",
+				"github.com/gorilla/websocket\t ·ʂ"
+			],
+			[
+				"Set",
+				"SetReadDeadline\tfunc(t time.Time) error ·ƒ"
+			],
+			[
+				"B",
+				"BrokenMessage\tMessageType ·Ɩ"
+			],
+			[
+				"R",
+				"RemoteAddr\tfunc() net.Addr ·ƒ"
+			],
+			[
+				"P",
+				"parsed\tbool ·ν"
+			],
+			[
+				"utf",
+				"unicode/utf8\t ·ʂ"
+			],
+			[
+				"Mask",
+				"Masking\tbool ·ν"
+			],
+			[
+				"Mess",
+				"MessageType\tbyte ·ʈ"
+			],
+			[
+				"Ma",
+				"Maskingkey\t[4]byte ·ν"
+			],
+			[
+				"Masking",
+				"Masking\tbool ·ν"
+			],
+			[
+				"M",
+				"Maskingkey\t[4]byte ·ν"
+			],
+			[
+				"CloseMe",
+				"CloseMessageCode\tuint ·ʈ"
+			],
+			[
+				"Ti",
+				"PingTimeout\ttime.Duration ·Ɩ"
+			],
+			[
+				"Ping",
+				"PingTimeout\ttime.Duration ·Ɩ"
+			],
+			[
+				"r",
+				"SetReadDeadline\tfunc(t time.Time) error ·ƒ"
+			],
+			[
+				"Read",
+				"ReadWriter\tstruct ·ʈ"
+			],
+			[
+				"StatusIn",
+				"StatusInternalServerError\tuntyped int ·Ɩ"
+			],
+			[
+				"net",
+				"netConn\tnet.Conn ·ν"
+			],
+			[
+				"enc",
+				"encoding/base64\t ·ʂ"
+			],
+			[
+				"Re",
+				"RequestURI\tstring ·ν"
+			],
+			[
+				"Respn",
+				"ResponseWriter\tinterface ·ʈ"
+			],
+			[
+				"Ha",
+				"Handler\tinterface ·ʈ"
+			],
+			[
+				"L",
+				"GetLabel\tfunc() string ·ƒ"
+			],
+			[
+				"test",
+				"test_pb.js"
+			],
+			[
+				"react",
+				"react-quill/"
+			],
+			[
+				"el",
+				"element-ui/"
+			],
+			[
+				"rel",
+				"icedesign-qrcode.rel.js"
+			],
+			[
+				"get",
+				"getCroppedCanvas\twarning"
+			],
+			[
+				"cl",
+				"className"
+			],
+			[
+				"hex",
+				"hex2decimal"
+			],
+			[
+				"flex",
+				"flex-wrap\tproperty"
+			],
+			[
+				"in",
+				"MarshalIndent\tfunc(v interface{}, prefix string, indent string) []byte, error ·ƒ"
+			],
+			[
+				"io",
+				"io/ioutil\t ·ʂ"
+			],
+			[
+				"re",
+				"ReadDir\tfunc(dirname string) []os.FileInfo, error ·ƒ"
+			],
+			[
+				"init",
+				"initQueue"
+			],
+			[
+				"thread",
+				"threadID"
+			],
+			[
+				"exit",
+				"exitFlag"
+			],
+			[
+				"content",
+				"content_length"
+			],
+			[
+				"name",
+				"nameKey"
+			],
+			[
+				"work",
+				"workQueue"
+			],
+			[
+				"en",
+				"enqueue"
+			],
+			[
+				"none",
+				"None"
+			],
+			[
+				"Mo",
+				"ModeExclusive\tos.FileMode ·Ɩ"
+			],
+			[
+				"encod",
+				"encoding/json\t ·ʂ"
+			],
+			[
+				"Cmd",
+				"Command\tfunc(name string, arg ...string) *exec.Cmd ·ƒ"
+			],
+			[
+				"next",
+				"next.min.js"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "pages/index.js",
+			"settings":
+			{
+				"buffer_size": 4667,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "next-env.d.ts",
+			"settings":
+			{
+				"buffer_size": 75,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/coding/md-code/next.js-canary/examples/with-ionic-typescript/pages/_app.tsx",
+			"settings":
+			{
+				"buffer_size": 1222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/coding/md-code/next.js-canary/examples/with-typescript-graphql/pages/_app.tsx",
+			"settings":
+			{
+				"buffer_size": 374,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/coding/md-code/next-learn-starter/typescript-final/pages/_app.tsx",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"live",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"emmet",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ex",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"Package Control: up",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"enablep",
+				"Package Control: Enable Package"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
+			[
+				"pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"math",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"enable",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"mat",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"matth",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"inc",
+				"Emmet: Increment Number by 1"
+			],
+			[
+				"ma",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"emmet ",
+				"Emmet: Balance Inward"
+			],
+			[
+				"emmet in",
+				"Emmet: Capture Abbreviation"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"endable ",
+				"Table Editor: Enable for current syntax"
+			],
+			[
+				" Math  ",
+				"HTMLPrettify: Set `node` Path"
+			],
+			[
+				"add rep",
+				"Package Control: Add Repository"
+			],
+			[
+				"enable p",
+				"Package Control: Enable Package"
+			],
+			[
+				"emm",
+				"Preferences: Emmet Key Bindings"
+			],
+			[
+				"git:lo",
+				"Git: Log All"
+			],
+			[
+				"edit",
+				"Project: Edit Project"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"rename",
+				"Rename File"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"co",
+				"Git: Commit"
+			],
+			[
+				"disable\t",
+				"Package Control: Disable Package"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"pu",
+				"Git: Push Current Branch"
+			],
+			[
+				"git",
+				"Git: Add All"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"selection",
+				"Rot13 Selection"
+			],
+			[
+				"ren",
+				"Rename File"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"reane",
+				"Rename File"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"gitadd",
+				"Git: Add All"
+			],
+			[
+				"emmet:",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"disable ",
+				"Package Control: Disable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"enable cur",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"pushc",
+				"Git: Push Current Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"table edit",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"table",
+				"Table Editor: Show demo film in new scratch view"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"endable",
+				"Package Control: Disable Package"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"la",
+				"LaTeXTools: Clear cache"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"erlang",
+				"Set Syntax: Erlang"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"utf",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"TypesCript",
+				"TypeScript: Signature Info"
+			],
+			[
+				"markdown",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"debug",
+				"SublimeCodeIntel: Enable Debug Mode"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"them",
+				"UI: Select Theme"
+			],
+			[
+				"new pro",
+				"Project Manager: Add New Project"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 237.0,
+		"history":
+		[
+			"r = os.system(\"cmd /k echo >>c:/coding/md/log.txt\")",
+			"r = os.system(\"cmd /k \\\"echo c:/coding/md/log.txt mkdir c:\\mkdir\\\"\")",
+			"r = os.system(\"cmd /k echo \\\"c:/coding/md/log.txt mkdir c:\\mkdir\\\"\")",
+			"r = os.system(\"cmd /k echo c:/coding/md/log.txt mkdir c:\\mkdir'\")",
+			"r = os.system(\"cmd /k 'echo c:/coding/md/log.txt mkdir c:\\mkdir'\")",
+			"r = os.system(\"cmd -k echo c:/coding/md/log.txt mkdir c:\\mkdir\")",
+			"r = os.system(\"echo c:/coding/md/log.txt mkdir c:\\mkdir\")",
+			"r = os.system(\"echo c:/log.txt mkdir c:\\mkdir\")",
+			"r = os.system(\"echo c:\\\\log.txt mkdir c:\\mkdir\")",
+			"r = os.system(\"mkdir c:\\mkdir\")",
+			"r = os.system(\"cwd .\")",
+			"print(r)",
+			"r = os.system(\"dir .\")",
+			"print(r)",
+			"pring(r)",
+			"r = os.system(\"dir\")",
+			"os.system(\"dir\")",
+			"subprocess.run(\"ls\")",
+			"subprocess.run()",
+			"import subprocess",
+			"subprocess.run()",
+			"import commands",
+			"for i in val.readlines()",
+			"for i in val.readlines(): &  print(i)",
+			"for i in val.readlines()  print(i)",
+			"for i in val.readlines(): print(i)",
+			"for i in val.readlines():",
+			"val = os.popen('ls -al')",
+			"val = os.ppopen('ls -al')",
+			"val = os.Ppopen('ls -al')",
+			"import os",
+			"val = os.Ppopen('ls -al')",
+			"cwd"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/coding/md-code/nextjs-blog",
+		"/C/coding/md-code/nextjs-blog/pages",
+		"/C/coding/md-code/next-learn-starter",
+		"/C/coding/md-code/next-learn-starter/typescript-final",
+		"/C/coding/md-code/next-learn-starter/typescript-final/pages"
+	],
+	"file_history":
+	[
+		"/C/coding/md-code/next.js-canary/examples/blog-starter/pages/_app.js",
+		"/C/coding/md-code/nextjs-blog/nextjs.sublime-project",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/PasteJS.sublime-macro",
+		"/C/coding/md/webpack/readme_react.md",
+		"/C/coding/md/readme_sublime.md",
+		"/C/coding/md-code/ts-demos/react-ts/test.html",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/registry.json",
+		"/C/coding/md-code/coding/psdemo.ps1",
+		"/C/coding/md-code/monaco-editor-0.22.1/package/README.md",
+		"/C/coding/md-code/reactjs.org-master/content/docs/accessibility.md",
+		"/C/coding/md/forex.html",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/CodeAsTS.sublime-macro",
+		"/C/coding/md-code/react-typescript-cheatsheet-master/HOC.md",
+		"/C/coding/md-code/react-typescript-cheatsheet-master/ADVANCED.md",
+		"/C/coding/md/webpack/readme_webpack.md",
+		"/C/iceWorks/TS/reacts-app/src/Cropper.tsx",
+		"/C/coding/md-code/pacman/src/3rdpart/Cropper.tsx",
+		"/C/iceWorks/TS/reacts-app/src/App.tsx",
+		"/C/iceWorks/TS/reacts-app/src/serviceWorker.ts",
+		"/C/iceWorks/TS/reacts-app/src/index.tsx",
+		"/C/iceWorks/TS/my-ts/package.json",
+		"/C/iceWorks/TS/my-ts/src/index.tsx",
+		"/C/iceWorks/TS/webpack/package.json",
+		"/C/iceWorks/TS/webpack/src/svg.d.ts",
+		"/C/iceWorks/TS/webpack/src/style.d.ts",
+		"/C/iceWorks/TS/webpack/src/index.ts",
+		"/C/iceWorks/TS/webpack/src/standalone.ts",
+		"/C/iceWorks/TS/webpack/src/png.d.ts",
+		"/C/coding/md-code/node-v12.18.3/deps/v8/docs/README.md",
+		"/C/coding/md-code/scrimba-demo/package.json",
+		"/C/coding/md-code/electron/node_modules/node-pty/deps/winpty/README.md",
+		"/C/coding/md-code/electron/node_modules/node-pty/deps/winpty/misc/TestUtil.cc",
+		"/C/coding/md/webpack/node.md",
+		"/C/coding/md/c-daystep/readme_vue.md",
+		"/C/coding/md/readme_php.md",
+		"/C/coding/md-code/pacman/upload.php",
+		"/C/coding/md-code/coding/coding.php",
+		"/C/coding/md-code/pacman/upload.json",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/php.sublime-build",
+		"/C/coding/md-code/pacman/public/log.json",
+		"/C/coding/md-code/pacman/public/upload.php",
+		"/C/coding/md-code/pacman/public/index.html",
+		"/C/coding/md-code/ts-demos/react-ts/test-router.html",
+		"/C/coding/md-code/pacman/build/index.html",
+		"/C/coding/md/writing/random-test/rand_test.html",
+		"/C/coding/md/readme_curl.md",
+		"/C/coding/md/minis/wxappMinisAction.class.php",
+		"/C/coding/md-code/pacman/public/log.txt",
+		"/C/coding/md/go/golang.md",
+		"/C/coding/md/minis/wxappApi3Action.class.php",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/Node.sublime-build",
+		"/C/coding/md-code/pacman/node_modules/react/cjs/react.development.js",
+		"/C/coding/md-code/pacman/src/demos/useLayoutEffect.tsx",
+		"/C/coding/md-code/coding/coding.ts",
+		"/C/coding/md-code/coding/tsconfig.json",
+		"/C/coding/md-code/coding/deno.ts",
+		"/C/coding/md-code/coding/deno.js",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/ts-node.sublime-build",
+		"/C/Users/OCEAN/AppData/Local/Microsoft/Windows/INetCache/IE/U9N7UXG9/welcome[1].ts",
+		"/C/coding/md-code/pacman/build/static/js/3.ed523f99.chunk.js",
+		"/C/coding/md/c-daystep/index.html",
+		"/C/coding/md-code/pacman/src/demos/LifeCycle.tsx",
+		"/C/node/node_modules/scrimba/readme.md",
+		"/C/node/scrimba.cmd",
+		"/C/coding/md-code/scrimba-demo/package-lock.json",
+		"/C/Users/OCEAN/AppData/Local/Temp/Rar$DIa13236.39295/README.md",
+		"/C/coding/md-code/pacman/src/App.tsx",
+		"/C/coding/md-code/pacman/.babelrc",
+		"/C/coding/md-code/flow-demo/index.js",
+		"/C/coding/md-code/flow-demo/.flowconfig",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/Flow.sublime-settings",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/Flow/Flow.sublime-settings",
+		"/C/coding/md-code/coding/coding.js",
+		"/C/coding/md-code/coding/ts.tsx",
+		"/C/coding/md-code/coding/coding.tsx",
+		"/C/coding/md-code/coding/ts.jsx",
+		"/C/coding/md-code/coding/coding.jsx",
+		"/C/coding/md-code/coding/coding.ts(22,37)",
+		"/C/coding/md-code/coding/jsconfig.json",
+		"/C/coding/md/STM/STM32_Nucleo.md",
+		"/C/coding/md/webpack/readme_css.md",
+		"/C/coding/md-code/pacman/node_modules/react-dom/cjs/react-dom.development.js",
+		"/C/coding/md-code/pacman/src/index.tsx",
+		"/C/coding/md/webpack/readme_es6.md",
+		"/C/coding/md-code/pacman/build/static/js/2.2973924c.chunk.js",
+		"/C/coding/md-code/pacman/build/static/js/runtime-main.4c71838e.js",
+		"/C/coding/md-code/pacman/build/static/js/3.8e1698fc.chunk.js",
+		"/C/coding/md-code/pacman/build/static/js/main.a7d3a630.chunk.js",
+		"/C/coding/md-code/pacman/build/static/js/2.2973924c.chunk.js.LICENSE.txt",
+		"/C/coding/md/readme_git.md",
+		"/C/coding/md-code/pacman/README.md",
+		"/C/iceWorks/Blookblock.html",
+		"/C/iceWorks/!serve.bat",
+		"/C/iceWorks/uilib_button_demo12.html",
+		"/C/download/games/heianqipiandi1-3zhang/Manifest_NonUFSFiles_Win64.txt",
+		"/C/iceWorks/TS/README.md",
+		"/C/iceWorks/TS/TicTacToe_TS/src/app.tsx",
+		"/C/Users/OCEAN/AppData/Local/Temp/Rar$DIa14588.47888/游戏安装必看说明.txt",
+		"/C/coding/md-code/coding/coding.ts(3,6)",
+		"/C/Users/OCEAN/AppData/Roaming/rrshare/logs/2021-01-18_log.txt",
+		"/C/Users/OCEAN/AppData/Roaming/rrshare/logs/2020-10-01_log.txt",
+		"/C/download/AliOS-Things/STM32 官方资源/st-link-cli.txt",
+		"/C/coding/md/Erlang.md",
+		"/C/coding/md/ElasticSearch.md",
+		"/C/coding/md/java.md",
+		"/C/coding/md/db/redis.md",
+		"/C/coding/md/ml.md",
+		"/C/coding/md/ccpp.md",
+		"/C/coding/md/Makefile.md",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/User/lisp.sublime-build",
+		"/C/coding/md/OpenGL/LinearAlgebra.md",
+		"/C/coding/md/socket.io/gRPC_protobuf.md",
+		"/C/coding/md/OpenGL/OpenGL.md",
+		"/C/ChezScheme/MinGw32-a6nt/examples/edit.ss",
+		"/C/ChezScheme/MinGw32-a6nt/examples/rsa.ss",
+		"/C/ChezScheme/MinGw32-a6nt/examples/Makefile",
+		"/C/coding/md-code/coding/coding.lua",
+		"/C/coding/md-code/coding/coding.py",
+		"/C/maven-3.6.3/conf/settings.xml",
+		"/C/coding/md/readme_win.md",
+		"/C/coding/md-code/electron/bootstrap-demo/index.html",
+		"/C/coding/md/c-daystep/readme.md",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/package-metadata.json",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/messages.json",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/README.md",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/typescript/libs/reference.py",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/main.py",
+		"/C/Users/OCEAN/AppData/Roaming/Sublime Text 3/Packages/TypeScript/typescript/libs/__init__.py"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 451.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"locale"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "pages/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScriptReact.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 2,
+								"tabSize": 2
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "next-env.d.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/coding/md-code/next.js-canary/examples/with-ionic-typescript/pages/_app.tsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								728,
+								728
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScriptReact.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 2,
+								"tabSize": 2
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/coding/md-code/next.js-canary/examples/with-typescript-graphql/pages/_app.tsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								59
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScriptReact.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/coding/md-code/next-learn-starter/typescript-final/pages/_app.tsx",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScriptReact.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 153.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SFTP":
+	{
+		"height": 0.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nextjs.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"typescript _app",
+				"next.js-canary\\examples\\with-typescript-graphql\\pages\\_app.tsx"
+			],
+			[
+				"typescript _app.tsx",
+				"next.js-canary\\examples\\with-ionic-typescript\\pages\\_app.tsx"
+			],
+			[
+				"_app.js",
+				"next.js-canary\\examples\\blog-starter\\pages\\_app.js"
+			],
+			[
+				"next-env.d.ts",
+				"React Project\\next-env.d.ts"
+			],
+			[
+				"sublime",
+				"md\\readme_sublime.md"
+			],
+			[
+				"sublime.",
+				"md\\readme_sublime.md"
+			],
+			[
+				"cod",
+				"coding\\coding.py"
+			],
+			[
+				"win.",
+				"md\\readme_win.md"
+			],
+			[
+				"webpac",
+				"md\\webpack\\readme_webpack.md"
+			],
+			[
+				"forex.html",
+				"md\\forex.html"
+			],
+			[
+				"webp",
+				"md\\webpack\\readme_webpack.md"
+			],
+			[
+				"codingphp",
+				"coding\\coding.php"
+			],
+			[
+				"php",
+				"md\\readme_php.md"
+			],
+			[
+				"test.h",
+				"md\\writing\\random-test\\rand_test.html"
+			],
+			[
+				"curl",
+				"md\\readme_curl.md"
+			],
+			[
+				"go",
+				"md\\go\\golang.md"
+			],
+			[
+				"action.",
+				"md\\minis\\wxappApi3Action.class.php"
+			],
+			[
+				"coding.ts",
+				"coding\\coding.ts"
+			],
+			[
+				"coding.js",
+				"coding\\coding.js"
+			],
+			[
+				"es",
+				"md\\webpack\\readme_es6.md"
+			],
+			[
+				"index.html",
+				"md\\c-daystep\\index.html"
+			],
+			[
+				"css",
+				"md\\webpack\\readme_css.md"
+			],
+			[
+				"vue",
+				"md\\c-daystep\\readme_vue.md"
+			],
+			[
+				"es6",
+				"md\\webpack\\readme_es6.md"
+			],
+			[
+				"git",
+				"md\\readme_git.md"
+			],
+			[
+				"cpp.md",
+				"md\\ccpp.md"
+			],
+			[
+				"stm",
+				"md\\STM\\STM32_Nucleo.md"
+			],
+			[
+				"lua",
+				"coding\\coding.lua"
+			],
+			[
+				"coding.l",
+				"coding\\coding.lisp"
+			],
+			[
+				"coding",
+				"coding\\coding.py"
+			],
+			[
+				"win",
+				"md\\readme_win.md"
+			],
+			[
+				"node",
+				"md\\webpack\\node.md"
+			],
+			[
+				"webpack",
+				"md\\webpack\\readme_webpack.md"
+			],
+			[
+				"react",
+				"md\\webpack\\readme_react.md"
+			],
+			[
+				"ts",
+				"md\\webpack\\readme_ts.md"
+			],
+			[
+				"git.",
+				"md\\readme_git.md"
+			],
+			[
+				"spa",
+				"md\\c-daystep\\spa.html"
+			],
+			[
+				"ts.",
+				"md\\webpack\\readme_ts.md"
+			],
+			[
+				".ts",
+				"coding\\coding.ts"
+			],
+			[
+				"readme.",
+				"md\\readme.md"
+			],
+			[
+				"index",
+				"md\\c-daystep\\index.html"
+			],
+			[
+				"java.md",
+				"md\\readme_java.md"
+			],
+			[
+				"bl",
+				"md\\OpenToonz\\Blender.md"
+			],
+			[
+				"mt",
+				"md\\mtd\\mtd.py"
+			],
+			[
+				"ff",
+				"md\\OpenToonz\\ffmpeg.md"
+			],
+			[
+				"re",
+				"md\\readme.md"
+			],
+			[
+				"redis",
+				"md\\db\\redis.md"
+			],
+			[
+				"spring",
+				"md\\SpringBoot.md"
+			],
+			[
+				"opencv",
+				"md\\OpenGL\\OpenCV.md"
+			],
+			[
+				"cv",
+				"md\\cv.md"
+			],
+			[
+				"rsa",
+				"md\\rsa\\readme_rsa.md"
+			],
+			[
+				"accme",
+				"md\\accme.md"
+			],
+			[
+				"linux",
+				"md\\readme_linux.md"
+			],
+			[
+				"read",
+				"md\\readme.md"
+			],
+			[
+				"mysql",
+				"md\\db\\mysql.md"
+			],
+			[
+				"ddos",
+				"md\\DDOS.md"
+			],
+			[
+				"echarts",
+				"md\\echart\\readme_echarts.md"
+			],
+			[
+				"gopl",
+				"md\\go\\readme_gopl.md"
+			],
+			[
+				"liN",
+				"md\\OpenGL\\LinearAlgebra.md"
+			],
+			[
+				"mongo",
+				"md\\db\\readme.MongoDB.md"
+			],
+			[
+				"mfc",
+				"md\\writing\\mfc\\mfc.html"
+			],
+			[
+				"dia",
+				"md\\diagram.md"
+			],
+			[
+				"ffme",
+				"md\\OpenToonz\\ffmpeg.md"
+			],
+			[
+				"readme",
+				"md\\readme.md"
+			],
+			[
+				"csharp",
+				"md\\csharp.md"
+			],
+			[
+				"bootsrap",
+				"md\\readme_bootstrap.md"
+			],
+			[
+				"erlan",
+				"md\\Erlang.md"
+			],
+			[
+				"net.md",
+				"md\\readme_net.md"
+			],
+			[
+				"hugo",
+				"md\\writing\\hugo.md"
+			],
+			[
+				"make",
+				"md\\Makefile.md"
+			],
+			[
+				"ccpp",
+				"md\\ccpp.md"
+			],
+			[
+				"vim",
+				"md\\vim\\readme_vim.md"
+			],
+			[
+				"open",
+				"md\\OpenGL\\OpenGL.md"
+			],
+			[
+				"socket",
+				"md\\socket.io\\go-my-websocket.md"
+			],
+			[
+				"java",
+				"User\\java.sublime-build"
+			],
+			[
+				"",
+				"md\\readme_git.md"
+			],
+			[
+				"m",
+				"md\\writing\\mfc\\mfc.md"
+			],
+			[
+				"rpc",
+				"md\\socket.io\\gRPC_protobuf.md"
+			],
+			[
+				"python",
+				"md\\readme_python.md"
+			],
+			[
+				"linu",
+				"md\\readme_linux.md"
+			],
+			[
+				"proto",
+				"md\\socket.io\\Protocol Buffer.md"
+			],
+			[
+				"go-",
+				"md\\socket.io\\go-my-websocket.md"
+			],
+			[
+				"block",
+				"md\\blockchain.md"
+			],
+			[
+				"Concurrency",
+				"CPP-Concurrency-In-Action-2ed-2019-master\\README.md"
+			],
+			[
+				"c",
+				"md\\csharp.md"
+			],
+			[
+				"gop",
+				"md\\go\\readme_gopl.md"
+			],
+			[
+				"ffm",
+				"md\\OpenToonz\\ffmpeg.md"
+			],
+			[
+				"ffmpg",
+				"md\\OpenToonz\\ffmpeg.md"
+			],
+			[
+				"coding.cpp",
+				"coding\\coding.cpp"
+			],
+			[
+				"css.md",
+				"md\\webpack\\readme_css.md"
+			],
+			[
+				"gol",
+				"md\\go\\readme_golang.md"
+			],
+			[
+				"golang",
+				"md\\go\\readme_golang.md"
+			],
+			[
+				"golan",
+				"md\\go\\readme_golang.md"
+			],
+			[
+				".go",
+				"coding\\main.go"
+			],
+			[
+				"awslib",
+				"sublime_diagram_plugin\\samples\\awslib.wsd"
+			],
+			[
+				"listspr",
+				"sublime_diagram_plugin\\samples\\listsprite.wsd"
+			],
+			[
+				"cv.md",
+				"md\\cv.md"
+			],
+			[
+				"mark",
+				"md\\Markdown Cheatsheet.md"
+			],
+			[
+				"markdown",
+				"md\\readme_markdown.md"
+			],
+			[
+				"ref.wsd",
+				"sublime_diagram_plugin\\samples\\ref.wsd"
+			],
+			[
+				"ming",
+				"User\\C++ MinGW.sublime-build"
+			],
+			[
+				"csbuild",
+				"User\\C#.sublime-build"
+			],
+			[
+				"openl",
+				"md\\OpenGL\\OpenGL.md"
+			],
+			[
+				"subli",
+				"md\\readme_sublime.md"
+			],
+			[
+				"sublim",
+				"md\\readme_sublime.md"
+			],
+			[
+				"writing mfc",
+				"md\\writing\\articals\\howMCF.html"
+			],
+			[
+				"ML.",
+				"md\\ml.md"
+			],
+			[
+				"mfc.",
+				"md\\writing\\mfc\\mfc.md"
+			],
+			[
+				"markdowm",
+				"md\\readme_markdown.md"
+			],
+			[
+				"sub",
+				"md\\readme_sublime.md"
+			],
+			[
+				"win.md",
+				"md\\readme_win.md"
+			],
+			[
+				"mardk",
+				"md\\readme_markdown.md"
+			],
+			[
+				"node.",
+				"User\\Node.sublime-build"
+			],
+			[
+				"blender",
+				"md\\OpenToonz\\Blender.md"
+			],
+			[
+				"Make",
+				"md\\Makefile.md"
+			],
+			[
+				"cmake",
+				"User\\CMake.sublime-settings"
+			],
+			[
+				"dart",
+				"User\\Dart 2.2.sublime-build"
+			],
+			[
+				"Ming",
+				"User\\C++ MinGW.sublime-build"
+			],
+			[
+				"cbuil",
+				"User\\C#.sublime-build"
+			],
+			[
+				"coding.py",
+				"coding\\coding.py"
+			],
+			[
+				"qguiapplication",
+				"Qt\\5.9\\Src\\qtbase\\src\\gui\\kernel\\qguiapplication_p.h"
+			],
+			[
+				"QGuiApplication",
+				"Qt\\5.9\\Src\\qtbase\\include\\QtGui\\qguiapplication.h"
+			],
+			[
+				"simpleqml",
+				"Qt\\Examples\\Qt-5.9\\activeqt\\simpleqml\\simpleqml.pro"
+			],
+			[
+				".qml",
+				"Qt\\Examples\\Qt-5.9\\activeqt\\simpleqml\\main.qml"
+			],
+			[
+				"noepad",
+				"Qt\\5.9\\Src\\qtdoc\\doc\\src\\snippets\\widgets-tutorial\\build\\notepad.creator"
+			],
+			[
+				"notepad",
+				"Qt\\5.9\\Src\\qtdoc\\doc\\src\\snippets\\widgets-tutorial\\build\\notepad.creator"
+			],
+			[
+				"addressbook",
+				"Qt\\5.9\\Src\\qtwebengine\\src\\3rdparty\\chromium\\third_party\\protobuf\\csharp\\src\\AddressBook\\AddressBook.csproj"
+			],
+			[
+				"notepad.",
+				"Qt\\5.9\\Src\\qtdoc\\doc\\src\\snippets\\widgets-tutorial\\notepad\\notepad.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ts",
+		"selected_items":
+		[
+			[
+				"ts",
+				"C:\\coding\\md-code\\ts-demos\\ts-demos.sublime-project"
+			],
+			[
+				"boo",
+				"C:\\coding\\md-code\\bootstrap-5.0\\bootstrap.sublime-project"
+			],
+			[
+				"",
+				"C:\\coding\\md-code\\csdemo\\cs.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"createTrackbar",
+				"createTrackbar"
+			],
+			[
+				"addWeighted",
+				"addWeighted"
+			],
+			[
+				"resize",
+				"resize"
+			],
+			[
+				"ApplicationViewer",
+				"QmlApplicationViewer"
+			],
+			[
+				"cuda_GpuMat",
+				"cuda_GpuMat"
+			],
+			[
+				"Function: element",
+				"Function: element"
+			],
+			[
+				"element",
+				"Function: element"
+			],
+			[
+				"spawn",
+				"Function: spawn"
+			],
+			[
+				"start_timer",
+				"Function: start_timer"
+			],
+			[
+				"ethr_atomic_read",
+				"ethr_atomic_read"
+			],
+			[
+				"erts_atomic64_read_nob",
+				"erts_atomic64_read_nob"
+			],
+			[
+				"now_",
+				"now_0"
+			],
+			[
+				"erl_start",
+				"erl_start"
+			],
+			[
+				"process_main",
+				"process_main"
+			],
+			[
+				"bs_init2",
+				"Function: do_bs_init_2"
+			],
+			[
+				"ErlSub",
+				"ErlSubBin"
+			],
+			[
+				"ProcBin",
+				"ProcBin"
+			],
+			[
+				"SMALL",
+				"small"
+			],
+			[
+				"Process",
+				"Process"
+			],
+			[
+				"TAG_PRIMARY_LIST",
+				"TAG_PRIMARY_LIST"
+			],
+			[
+				"ErlDrvEntry",
+				"ErlDrvEntry"
+			],
+			[
+				"driver_entry",
+				"add_driver_entry"
+			],
+			[
+				"driver_select",
+				"driver_select"
+			],
+			[
+				"ready_output",
+				"ready_output"
+			],
+			[
+				"main",
+				"main"
+			],
+			[
+				"AddSingleTon",
+				"TryAddSingleton"
+			]
+		],
+		"width": 1126.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
