@@ -155,7 +155,7 @@ Markdown { slug: [ 'tutorial-basic' ] } /tutorial/tutorial-basic
 Markdown { slug: [ 'tutorial-custom-page' ] } /tutorial/tutorial-custom-page
 Markdown { slug: [ 'tutorial-layout' ] } /tutorial/tutorial-layout
 Markdown { slug: [ 'tutorial-styling' ] } /tutorial/tutorial-styling
-====== getPostBySlug [ 'tutorial-config' ] \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 TypeScript 配置使用
+====== getPostBySlug [ 'tutorial-config' ] \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 next.config.js 配置脚本
 Markdown { slug: [ 'tutorial-config' ] } /tutorial/tutorial-config
 
 ++++++ [...slug] getStaticProps { slug: [ 'tutorial-link-route' ] }
@@ -337,7 +337,7 @@ Will component execute getStaticProps? { locales: [ 'en', 'zh-CN' ], locale: 'zh
 ====== getPosts false Docs
 ====== getPostBySlug tutorial-assets \\nextjs-blog\\Docs\\tutorial-assets.md 👉 05 静态资源管理
 ====== getPostBySlug tutorial-basic \\nextjs-blog\\Docs\\tutorial-basic.md 👉 02 工程基本结构
-====== getPostBySlug tutorial-config \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 TypeScript 配置使用
+====== getPostBySlug tutorial-config \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 next.config.js 配置脚本
 ====== getPostBySlug tutorial-custom-page \\nextjs-blog\\Docs\\tutorial-custom-page.md 👉 03 自定义页面
 ====== getPostBySlug tutorial-layout \\nextjs-blog\\Docs\\tutorial-layout.md 👉 06 布局打磨
 ====== getPostBySlug tutorial-link-route \\nextjs-blog\\Docs\\tutorial-link-route.md 👉 04 路由相关组件 Link & Route
@@ -361,7 +361,7 @@ Will component execute getStaticProps? { locales: [ 'en', 'zh-CN' ], locale: 'zh
 ====== getPostBySlug createClass \\nextjs-blog\\Docs\\React\\createClass.md 👉 A4 换一种组件创建方式
 ====== getPostBySlug tutorial-basic \\nextjs-blog\\Docs\\tutorial-basic.md 👉 02 工程基本结构
 ====== getPostBySlug hello \\nextjs-blog\\Docs\\React\\hello.md 👉 A1 Hello React
-====== getPostBySlug tutorial-config \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 TypeScript 配置使用
+====== getPostBySlug tutorial-config \\nextjs-blog\\Docs\\tutorial-config.md 👉 09 next.config.js 配置脚本
 ====== getPostBySlug list-key-reconciliation \\nextjs-blog\\Docs\\React\\list-key-reconciliation.md 👉 A8 列表、键值与协调器
 ====== getPostBySlug tutorial-custom-page \\nextjs-blog\\Docs\\tutorial-custom-page.md 👉 03 自定义页面
 ====== getPostBySlug mainconcepts \\nextjs-blog\\Docs\\React\\mainconcepts.md 👉 A2 基本概念

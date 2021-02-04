@@ -2,6 +2,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 部分内容目录：
 
+
 - [👉 01 Next.js SSR 服务端渲染!](./Docs/tutorial-start.md)
 - [👉 02 工程基本结构](./Docs/tutorial-basic.md)
 - [👉 03 自定义页面](./Docs/tutorial-custom-page.md)
@@ -10,10 +11,12 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - [👉 06 布局打磨](./Docs/tutorial-layout.md)
 - [👉 07 样式配置建议](./Docs/tutorial-styling.md)
 - [👉 08 TypeScript 配置使用](./Docs/tutorial-typescript.md)
+- [👉 09 next.config.js 配置脚本](./Docs/tutorial-config.md)
 - [👉 11 路由配置](./Docs/Advanced/route.md)
 - [👉 12 页面组件渲染](./Docs/Advanced/pages.md)
 - [👉 13 预渲染与数据依赖](./Docs/Advanced/prerendering.md)
 - [👉 14 Markdown 文档处理](./Docs/Advanced/markdown.md)
+- [👉 15 i18n 国际化与本地化](./Docs/Advanced/i18n.md)
 - [👉 A1 Hello React](./Docs/React/hello.md)
 - [👉 A2 基本概念](./Docs/React/mainconcepts.md)
 - [👉 A3 JSX & Babel 入门](./Docs/React/babel.md)
@@ -22,7 +25,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - [👉 A6 组件与属性](./Docs/React/props.md)
 - [👉 A7 组件状态与生命周期](./Docs/React/state.md)
 - [👉 A8 列表、键值与协调器](./Docs/React/list-key-reconciliation.md)
-
 
 另外，Next.js 提供的 Vercel 平台可以很方便地布署项目，除了支持自家的框架，还支持其它多种流行的框架。只需将代码仓库导入，即可以完成编译和部署。默认使用 main 或者 master 分支，可以在托管项目中 Production Branch 进行设置。
 
