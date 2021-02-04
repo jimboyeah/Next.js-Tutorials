@@ -65,7 +65,7 @@ export async function getStaticProps({ params }: Params) {
 
 export async function getStaticPaths(context:any) {
   const slugTree = getPostSlugs()
-  let locale = context.locale ?? 'en';
+  let locale = context.locale ?? 'zh-CN';
   let paths = slugTree.list.map((slug) => {
     return { locale, params: { slug: [slug] } }
   })

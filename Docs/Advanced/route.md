@@ -143,7 +143,7 @@ export default function Catchopt(props:any){
     const Router = useRouter()
     let json = JSON.stringify(Router.query);
     let fallback = Router.isFallback && "FALLBACK";
-    console.log(`-----------------[[...catchopt]].tsx`, fallback, props, Router);
+    console.log(`------ [[...catchopt]].tsx`, fallback, props, Router);
     return (
     <Layout>
     <h3 className="card">Optional Catch-all Routes Test</h3>
@@ -157,7 +157,7 @@ export default function Catchopt(props:any){
 }
 
 export async function getStaticProps(context: any) {
-    console.log("+++++++++++++++Optional Catch-all getStaticProps", context);
+    console.log("++++++ Optional Catch-all getStaticProps", context);
     return {
         props: {
             data: JSON.stringify(context)
@@ -166,14 +166,14 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths(context:any) {
-    console.log("+++++++++++++++Optional Catch-all getStaticPaths", context);
+    console.log("++++++ Optional Catch-all getStaticPaths", context);
     const res = await fetch(`https://github.com/manifest.json`)
     const data = await res.json()
     let locale = context.locale ?? 'zh-CN';
     let paths = [
-        {params:{ locale, catchopt: ['catch', 'all'] }},
-        {params:{ locale, catchopt: ['catch', data.name] }},
-        {params:{ locale, catchopt: false }}, 
+        {locale, params:{ catchopt: ['catch', 'all'] }},
+        {locale, params:{ catchopt: ['catch', data.name] }},
+        {locale, params:{ catchopt: false }}, 
     ]
     return { paths, fallback: false }
 }
@@ -210,14 +210,14 @@ export async function getStaticPaths(context:any) {
 
 在导出 `getStaticProps()` 和 `getStaticPaths()` 函数时，就是在向 Next.js 表明，页面需要使用动态的数据，渲染生成时需要执行它们，参考输出信息：
 
-	+++++++++++++++Optional Catch-all getStaticPaths { locales: null, defaultLocale: null }
-	+++++++++++++++Optional Catch-all getStaticProps {
+	++++++ Optional Catch-all getStaticPaths { locales: null, defaultLocale: null }
+	++++++ Optional Catch-all getStaticProps {
 	  params: { catchopt: [ 'catch', 'GitHub' ] },
 	  locales: undefined,
 	  locale: undefined,
 	  defaultLocale: undefined
 	}
-	-----------------[[...catchopt]].tsx false { data: '{"params":{"catchopt":["catch","GitHub"]}}' } ServerRouter {
+	------ [[...catchopt]].tsx false { data: '{"params":{"catchopt":["catch","GitHub"]}}' } ServerRouter {
 	  route: '/route/[[...catchopt]]',
 	  pathname: '/route/[[...catchopt]]',
 	  query: { catchopt: [ 'catch', 'GitHub' ] },

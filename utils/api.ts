@@ -34,7 +34,7 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
   let subs: string[] = []
   let path = join(process.cwd(), folder)
   let list = FileSystem.readdirSync(path)
-  console.log("========================getPostSlugs", folder)
+  console.log("====== getPostSlugs", folder)
   list.map((it, id) => {
     let sta = FileSystem.statSync(join(path, it))
     if (sta.isDirectory()) {
@@ -61,7 +61,7 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
  * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
 export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder: string = 'Docs') {
-  console.log("========================getPosts", !slugs, folder)
+  console.log("====== getPosts", !slugs, folder)
   if (!slugs.length) {
     const tree = getPostSlugs(folder)
     slugs = tree.list
@@ -89,7 +89,7 @@ export function getPostBySlug(slug: string[] | string, fields: MetterKey[] = [],
   const fullPath = join(join(process.cwd(), folder), `${realSlug}.md`)
   const fileContents = FileSystem.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-  console.log("========================getPostBySlug", slug, fullPath, data.title)
+  console.log("====== getPostBySlug", slug, fullPath, data.title)
 
   const items: FrontMetter = {} as FrontMetter
 

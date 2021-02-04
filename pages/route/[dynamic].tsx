@@ -23,13 +23,13 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths(context:any) {
-    console.log("++++++ Dynamic getStaticPaths", context);
     let locale = context.locale ?? 'zh-CN';
     let paths = [
-        {params:{ locale, dynamic: 'dynamic' }},
-        {params:{ locale, dynamic: 'pass' }},
-        {params:{ locale, dynamic: 'sideway' }},
-        {params:{ locale, dynamic: 'more' }},
+        {locale, params:{ dynamic: 'dynamic' }},
+        {locale, params:{ dynamic: 'pass' }},
+        {locale, params:{ dynamic: 'sideway' }},
+        {locale, params:{ dynamic: 'more' }},
     ]
+    console.log("++++++ Dynamic getStaticPaths", context, paths);
     return { paths, fallback: false }
 }

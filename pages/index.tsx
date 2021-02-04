@@ -15,11 +15,21 @@ export async function getStaticProps(context:any){
     mdFiles[sub.folder] = (getPosts(fields, sub.list, sub.folder))
   })
   return {
-    props: {mdFiles, mdTree}
+    props: {mdFiles, mdTree, locale: context.locale}
   }
 }
 
 export default function Home(props:any) {
+  if(props.locale==="en") {
+    return (
+      <Layout home>
+        <div className="card rows fxCenter fxEvenly">
+        <Link href="/" locale="en">✊English coming soon</Link>
+        <Link href="/" locale="zh-CN">🚩Chinese</Link>
+        </div>
+      </Layout>
+    )
+  }
   return (
     <Layout home>
       <Head>
