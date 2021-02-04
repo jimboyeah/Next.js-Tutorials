@@ -1,8 +1,8 @@
 ---
-title: '👉 09 TypeScript 配置使用'
-excerpt: 'Next.js 提供了 TypeScript 集成体验，通过配置 TypeScript，即可以转换 JavaScript 开发环境，以使用 Next.js 的类型规范。'
+title: '👉 09 next.config.js 配置脚本'
+excerpt: 'Next.js 在顶级目录下提供了 next.config.js 配置脚本，可以随时建立这个配置文件'
 coverImage: '/20161106s.jpg'
-date: '2021-02-05T01:49:07.322Z'
+date: '2021-02-05T02:10:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'
@@ -10,109 +10,262 @@ ogImage:
     url: '/20161106s.jpg'
 ---
 
-# 👉 Next.js with TypeScript
+# 👉 next.config.js 配置脚本
+- https://nextjs.org/docs/api-reference/next.config.js
+- https://en.wikipedia.org/wiki/Content_delivery_network
 
-- https://nextjs.org/learn/excel/typescript
-- https://nextjs.org/docs/basic-features/typescript
-- https://github.com/vercel/next.js/tree/canary/examples/with-typescript
-- https://github.com/vercel/next-learn-starter/tree/master/typescript-final
+环境变量配置：
 
-Next.js 提供了 TypeScript 集成体验，通过配置 TypeScript，即可以转换 JavaScript 开发环境，以使用 Next.js 的类型规范。
-
-首先安装 TypeScript 编译器和相关的类型声明模块，Node.js 模块本身已经含有类型声明文件，不用另外安装。
-
-然后一并在工程目录中初始化默认配置文件 `tsconfig.json`，TypeScript strict 模式默认是没有开启的，建议打开。ts-node 模块可以用来直接运行 ts 脚本：
-
-	npm install -g typescript
-	npm install -g ts-node
-	tsc --init
-
-	# If you’re using npm
-	npm install --save-dev typescript @types/react @types/node
-
-	# If you’re using Yarn
-	yarn add --dev typescript @types/react @types/node
-
-
-编译器会生成 `next-env.d.ts` 这个类型声明模块文件，检查它可以确定 Next.js 类型已经在 TypeScript 编译器中起作用，通常内容是使用三斜杠指令引用其它的类型声明模块：
-
-	/// <reference types="next" />
-	/// <reference types="next/types/global" />
-
-
-然后重启开发服务器，以使用 TypeScript 功能生效。
-
-Next.js Specific Types 提供的类型如下。
-
-Static Generation and Server-side Rendering
-
-```ts
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
-
-export const getStaticProps: GetStaticProps = async context => {
-  // ...
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  // ...
-}
-
-export const getServerSideProps: GetServerSideProps = async context => {
-  // ...
+```js
+module.exports = {
+  env: {
+    customKey: 'my-value',
+  },
 }
 ```
 
-API Routes
+使用环境变量：
 
-```ts
-import { NextApiRequest, NextApiResponse } from 'next'
+```js
+function Page() {
+  return <h1>The value of customKey is: {process.env.customKey}</h1>
+}
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  // ...
+export default Page
+
+```
+
+
+要将应用配置在子目录中运行，请使用 basePath 指定。
+
+```js
+module.exports = {
+  basePath: '/docs',
 }
 ```
 
-接下来需要将 JavaScript 工程的脚本文件改成 TypeScript，例如可以将 `pages/_app.js` 转换为 .tsx 扩展名以使用 AppProps 类型：
+在使用 `next/link` 和 `next/router` 组件的情况下，`basePath` 设置会自动更新。比如以下例子的 `/about` 会自动更新为`/docs/about`。
 
 ```ts
-import { AppProps } from 'next/app'
-
-function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
-
-export default App
-```
-
-列如，布局模块可以更新为带 TypeScript 类型语法结构：
-
-```ts
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
-	return (<>...<>)
-}
-```
-
-转换后的文件可以参考 next-learn-starter 的 typescript-final
-
-使用静态类型语法后，在 VSCode 中会有更多的提示信息，需要认真理解提示的意义。
-
-例如，以下代码中的返回值会给出错误信息：
-
-```ts
-export default function App({ Component, pageProps }):AppProps {
+export default function HomePage() {
   return (
-    <><Component {...pageProps} /></>
+    <>
+      <Link href="/about">
+        <a>About Page</a>
+      </Link>
+    </>
   )
 }
 ```
 
-乍一看，是正确 tsx 语法，但是，仔细分析一下函数 AppProps 变成了函数的返回值，导致改变了函数签名而引发错误：
+但是图片这些就不是了。
 
-	Type 'Element' is not assignable to type 'AppPropsType<Router, {}>'.
-	  Property 'pageProps' is missing in type 'Element' but required in type 'AppInitialProps'.ts(2322)
+
+为 CDN 配置资源的路径前缀：
+
+```js
+const isProd = process.env.NODE_ENV === 'production'
+
+module.exports = {
+  // Use the CDN in production and localhost for development.
+  assetPrefix: isProd ? 'https://cdn.mydomain.com' : '',
+}
+```
+
+Next.js 会自动为 JavaScript 和 CSS 文件的加载使用 `/_next/` 路径前缀，即指向 `.next/static/` 目录下的内容。
+
+配置资源路径前缀并不影响以下路径：
+
+- `/public` 目录，这里的文件如果要配置 CDN 就要自行处理。
+- `/_next/data/` 下由 `getServerSideProps()` 请求的页面，因为它们不是静态内容。
+- `/_next/data/` 下由 `getStaticProps()` 请求的页面，这些是为主域和增量静态生成使用。
+
+
+配置构建输出目录：
+
+```js
+module.exports = {
+  distDir: 'build',
+}
+```
+
+配置扩展名支持，包括 `next/mdx` 文档增强插件，MDX 让 Markdown 步入组件时代 MDX 是一种书写格式，允许在文档中无缝地插入 JSX 代码。
+
+```js
+module.exports = {
+  pageExtensions: ['mdx', 'jsx', 'js', 'ts', 'tsx'],
+}
+```
+
+配置请请求头处理，支持 i18n 国际化：
+
+```js
+module.exports = {
+  i18n: {
+    locales: ['en', 'fr', 'de'],
+    defaultLocale: 'en',
+  },
+
+  async headers() {
+    return [
+      {
+        // does not handle locales automatically since locale: false is set
+        source: '/nl/with-locale-manual',
+        locale: false,
+        headers: [
+          {
+            key: 'x-hello',
+            value: 'world',
+          },
+        ],
+      },
+      {
+        // this matches '/' since `en` is the defaultLocale
+        source: '/en',
+        locale: false,
+        headers: [
+          {
+            key: 'x-hello',
+            value: 'world',
+          },
+        ],
+      },
+      {
+        source: '/blog/:post(\\d{1,})',
+        headers: [
+          {
+            key: 'x-post',
+            value: ':post',
+          },
+        ],
+      },
+    ],
+  },
+}
+```
+
+地址重写配置 URL Rewrites：
+
+```js
+module.exports = {
+  basePath: '/docs',
+  i18n: {
+    locales: ['en', 'fr', 'de'],
+    defaultLocale: 'en',
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: '/with-basePath', // automatically becomes /docs/with-basePath
+        destination: '/another', // automatically becomes /docs/another
+      },
+      {
+        // does not add /docs to /without-basePath since basePath: false is set
+        // Note: this can not be used for internal rewrites e.g. `destination: '/another'`
+        source: '/without-basePath',
+        destination: 'https://example.com',
+        basePath: false,
+      },
+      {
+        // does not handle locales automatically since locale: false is set
+        source: '/nl/with-locale-manual',
+        destination: '/nl/another',
+        locale: false,
+      },
+    ]
+  },
+}
+```
+
+重定向配置：
+
+```js
+module.exports = {
+  basePath: '/docs',
+  i18n: {
+    locales: ['en', 'fr', 'de'],
+    defaultLocale: 'en',
+  },
+
+  async redirects() {
+    return [
+      {
+        // this matches '/' since `en` is the defaultLocale
+        source: '/en',
+        destination: '/en/another',
+        locale: false,
+        permanent: false,
+      },
+      {
+        source: '/post/:slug(\\d{1,})',
+        destination: '/news/:slug', // Matched parameters can be used in the destination
+        permanent: false,
+      },
+      {
+        source: '/with-basePath', // automatically becomes /docs/with-basePath
+        destination: '/another', // automatically becomes /docs/another
+        permanent: false,
+      },
+      {
+        // does not add /docs since basePath: false is set
+        source: '/without-basePath',
+        destination: '/another',
+        basePath: false,
+        permanent: false,
+      },
+    ]
+  },
+}
+```
+
+
+
+配置 Webpack：
+
+```js
+// Example config for adding a loader that depends on babel-loader
+// This source was taken from the @next/mdx plugin source:
+// https://github.com/vercel/next.js/tree/canary/packages/next-mdx
+module.exports = {
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.mdx/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: pluginOptions.options,
+        },
+      ],
+    })
+
+    return config
+  },
+}
+```
+
+```js
+module.exports = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Note: we provide webpack above so you should not `require` it
+    // Perform customizations to webpack config
+    config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
+
+    // Important: return the modified config
+    return config
+  },
+}
+```
+
+
+
+
+配置 React Strict Mode 
+
+```js
+// next.config.js
+module.exports = {
+  reactStrictMode: true,
+}
+```
