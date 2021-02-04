@@ -13,22 +13,23 @@ export default function Dynamic(props:any){
     )
 }
 
-export async function getStaticProps(props: any) {
-    console.log("+++++++++++++++Dynamic getStaticProps", props);
+export async function getStaticProps(context: any) {
+    console.log("+++++++++++++++Dynamic getStaticProps", context);
     return {
         props: {
-            data: JSON.stringify(props)
+            data: JSON.stringify(context)
         }
     }
 }
 
-export async function getStaticPaths(props:any) {
-    console.log("+++++++++++++++Dynamic getStaticPaths", props);
+export async function getStaticPaths(context:any) {
+    console.log("+++++++++++++++Dynamic getStaticPaths", context);
+    let locale = context.locale ?? 'zh-CN';
     let paths = [
-        {params:{ dynamic: 'dynamic' }},
-        {params:{ dynamic: 'pass' }},
-        {params:{ dynamic: 'sideway' }},
-        {params:{ dynamic: 'more' }},
+        {params:{ locale, dynamic: 'dynamic' }},
+        {params:{ locale, dynamic: 'pass' }},
+        {params:{ locale, dynamic: 'sideway' }},
+        {params:{ locale, dynamic: 'more' }},
     ]
     return { paths, fallback: false }
 }

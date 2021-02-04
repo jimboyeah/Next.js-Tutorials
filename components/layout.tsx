@@ -6,6 +6,8 @@ import utilStyles from '../styles/utils.module.css'
 
 const name ="Jeango"
 export let siteTitle = "Next.js Lectures"
+export let subTitle = "My Vegetable Garden"
+export let microView = "Micro View of Allium"
 
 type Props = { children: any, home?: boolean }
 
@@ -14,7 +16,7 @@ export default function Layout({children, home}:Props) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/micro_xs.png" />
         <meta name="description" content="Learn how to use Next.js" />
         <meta property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -28,23 +30,24 @@ export default function Layout({children, home}:Props) {
       {home ? (
         <>
           <img
-            src="/profile.jpg"
-            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-            alt={name}
+            src="/daylily.jpg"
+            className={`${styles.grow} ${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+            title={subTitle}
+            alt={subTitle}
           />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
+          {/* <h1 className={utilStyles.heading2Xl}>{subTitle}</h1> */}
         </>
       ):(
         <>
         <Link href="/">
           <a href="/">
-          <img src="/profile.jpg" alt={name} 
-          className={[styles.headerImage, utilStyles.borderCircle].join(' ')}
+          <img src="/micro_s.png" alt={microView} 
+          className={[styles.grow, styles.headerImage, utilStyles.borderCircle].join(' ')}
           srcSet=""/>
           </a>
         </Link>
         <h2 className={utilStyles.headingLg}>
-          <Link href="/"><a className={utilStyles.colorInherit}>{name}</a></Link>
+          <Link href="/"><a className={utilStyles.colorInherit}>{microView}</a></Link>
         </h2>
         </>
       )}

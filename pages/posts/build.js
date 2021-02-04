@@ -19,15 +19,35 @@ info  - Generating static pages (3/3)
 info  - Finalizing page optimization
 
 Page                                                           Size     First Load JS
-┌ ○ /                                                          7.34 kB        70.5 kB
-├ ○ /404                                                       3.46 kB        66.6 kB
-└ ○ /posts/first-post                                          310 B          63.5 kB
-+ First Load JS shared by all                                  63.2 kB
-  ├ chunks/f6078781a05fe1bcb0902d23dbbb2662c8d200b3.783b05.js  13.3 kB
-  ├ chunks/framework.e2fe4a.js                                 41.8 kB
-  ├ chunks/main.f685e0.js                                      6.37 kB
-  ├ chunks/pages/_app.7d2df5.js                                1.01 kB
-  └ chunks/webpack.50bee0.js                                   751 B
+┌ ● /                                                          2.29 kB        73.7 kB
+├   /_app                                                      0 B            63.6 kB
+├ ○ /404                                                       3.46 kB          67 kB
+├ ○ /authors/me                                                2.86 kB        66.4 kB
+├ ○ /posts/build                                               981 B          72.4 kB
+├ ● /posts/posts                                               1.92 kB        65.5 kB
+├ λ /posts/tutorial-assets                                     3.66 kB        82.9 kB
+├ ● /route/[[...catchopt]]                                     458 B          68.4 kB
+├   ├ /en/route/catch/all
+├   ├ /en/route/catch/GitHub
+├   └ /en/route
+├ ● /route/[dynamic]                                           411 B          68.3 kB
+├   ├ /en/route/dynamic
+├   ├ /en/route/pass
+├   ├ /en/route/sideway
+├   └ /en/route/more
+├ ○ /route/normal                                              404 B          68.3 kB
+└ ● /tutorial/[...slug]                                        685 B          79.9 kB
+    ├ /zh-CN/tutorial/tutorial-typescript
+    ├ /zh-CN/tutorial/tutorial-styling
+    ├ /zh-CN/tutorial/tutorial-start
+    └ [+5 more paths]
++ First Load JS shared by all                                  63.6 kB
+  ├ chunks/3b3c9a2ea2010c89a76e8629b038f31464800316.486aa7.js  13.7 kB
+  ├ chunks/framework.abffcf.js                                 41.8 kB
+  ├ chunks/main.fee731.js                                      6.76 kB
+  ├ chunks/pages/_app.1731a5.js                                586 B
+  ├ chunks/webpack.50bee0.js                                   751 B
+  └ css/08a98f08e724fed460cb.css                               1.01 kB
 
 λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)  automatically rendered as static HTML (uses no initial props)

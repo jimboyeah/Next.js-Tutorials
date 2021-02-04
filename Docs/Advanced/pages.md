@@ -17,8 +17,8 @@ ogImage:
 - https://www.nextjs.cn/learn/basics/dynamic-routes/implement-getstaticpaths
 - https://www.nextjs.cn/learn/basics/dynamic-routes/implement-getstaticprops
 
-Next.js 应用中的页面就是一个从 .js、jsx、.ts、.tsx 文件导出的 React 组件，这些文件存放在顶层的 pages 目录下，每个页面都使用文件名作为路由 route，即路由是基于目录结构生成的。
 
+Next.js 应用中的页面就是一个从 .js、jsx、.ts、.tsx 文件导出的 React 组件，这些文件存放在顶层的 pages 目录下，每个页面都使用文件名作为路由 route，即路由是基于目录结构生成的。
 
 Next.js 支持具有动态路由的页面，具有动态路由的页面。例如，如果你创建了一个命名为 pages/posts/[id].js 的文件，那么就可以通过 posts/1、posts/2 等类似的 URL 地址进行访问，访问时会将参数动态传入。
 
@@ -35,8 +35,10 @@ Next.js 具有两种形式的预渲染：
 
 页面需要获取外部数据的静态预渲染又分为以下两种情况：
 
-- 页面内容取决于外部数据，使用 `getStaticProps`。
-- 页面路径取决于外部数据，使用 `getStaticPaths`，通常还要同时使用 `getStaticProps`。
+- 页面依赖内容数据，使用 `getStaticProps`。
+- 页面依赖路径数据，使用 `getStaticPaths`，通常还要同时使用 `getStaticProps`。
+
+这里，需要区分一下页面这个概念，尽管，页面也是组件，但是这个组件作为页面来使用用。在请求时先加载是页面，然后再由页面加载其它组件，而对于其它组件来说，以上这些数据获取方法并不可用，即使将其文件放到 pages 目录下也一样。
 
 以下是 Vercel next.js 示范项目中提供的涉及数据获取的静态生成例子：
 
@@ -67,7 +69,7 @@ Next.js 可以静态生成带有或不带有数据的页面。
 预渲染时不需要获取任何外部数据这种情况下，Next.js 只需在构建时为每个页面生成一个 HTML 文件即可。
 
 
-场景一、页面需要获取外部数据的静态渲染
+场景一、页面内容依赖于数据的静态渲染
 
 假定博客页面可能需要从 CMS 内容管理系统中获取文章列表，以下 `Blog` 组件在获取数据前不会进行渲染。
 
@@ -109,7 +111,7 @@ export async function getStaticProps() {
 export default Blog
 ```
 
-场景二、页面路径取决于外部数据。
+场景二、页面路径依赖于数据。
 
 如前面介绍，Next.js 允许你创建具有动态路由的页面。例如，一个名为 `pages/posts/[id].js` 的文件用以展示以 id 标识的单篇博客文章。当 URL 指向 posts/1 路径时将展示 id=1 的博客文章。这种情况就路径依赖于数据，在构建时 id 所对应的内容时需要从外部获取。
 
@@ -130,6 +132,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 ```
+
 
 同样在 `pages/posts/[id].js` 页面中还需要导出 `getStaticProps()` 以便可以获取 id 所对应的博客文章的数据并进行预渲染：
 
@@ -157,7 +160,6 @@ export async function getStaticProps({ params }) {
 
 
 
-
 另一方面，如果你无法在用户请求之前预渲染页面，则静态生成不是一个好主意。这也许是因为页面需要显示频繁更新的数据，并且页面内容会随着每个请求而变化。
 
 在这种情况下，您可以执行以下任一操作：
@@ -167,13 +169,15 @@ export async function getStaticProps({ params }) {
 
 服务器端渲染也被称为 SSR 或动态渲染，如果页面使用的是服务器端渲染，则会在每次页面请求时重新生成页面的 HTML。需要在页面文件中导出 `getServerSideProps()` 异步函数，服务器将在每次页面请求时调用此函数。
 
-例如，假设你的某个页面需要预渲染频繁更新的数据，比如从外部 API 获取）。你就可以编写 getServerSideProps 获取该数据并将其传递给 Page ，如下所示：
+例如，假设你的某个页面需要预渲染频繁更新的数据，比如从外部 API 获取。你就可以编写 getServerSideProps 获取该数据并将其传递给 Page。
+
+示范如下：
 
 ```jsx
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://.../data`)
+  const res = await fetch(`https://github.com/manifest.json`)
   const data = await res.json()
 
   // Pass data to the page via props
@@ -188,4 +192,3 @@ export async function getServerSideProps() {
 - 静态生成 HTML 是在构建时生成的，并重用于每个页面请求。静态生成的页面只需导出页面组件或 `getStaticProps` 函数，如果需要还可以导出 `getStaticPaths` 函数。对于可以在用户请求之前预先渲染的页面来说，这非常有用，你也可以将其与客户端渲染一起使用以便引入其他数据。
 
 - 服务器端渲染 HTML 是在每个页面请求时生成的。要使用服务器端渲染，请导出 `getServerSideProps` 函数。由于服务器端渲染会导致性能比静态生成慢，因此仅在绝对必要时才使用此功能。
-

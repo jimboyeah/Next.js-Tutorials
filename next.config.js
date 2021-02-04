@@ -18,5 +18,10 @@ module.exports = (phase, { defaultConfig }) => {
   // if (phase === PHASE_DEVELOPMENT_SERVER) 
   // return {...defaultConfig, ...webpackConfig};
   defaultConfig.webpack = webpackConfig;
-  return {...defaultConfig, basePath: ''};
+  return {...defaultConfig, basePath: '',
+    i18n: {
+      locales: ['en', 'zh-CN'],
+      defaultLocale: 'en',
+    }
+  };
 }

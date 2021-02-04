@@ -117,3 +117,7 @@ ogImage:
         )
     }
     ```
+
+或者使用 React 的 `dangerouslySetInnerHTML` 属性来设置 innerHTML：
+
+	<div dangerouslySetInnerHTML={{__html:`${md}`}}></div>

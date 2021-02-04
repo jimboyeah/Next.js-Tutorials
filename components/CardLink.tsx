@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-type Props = { href:string, caption?:string, text?:string, children:any }
+type Props = { href:string, caption?:string, text?:string, children?:any }
 
 export default function CardLink({ href, caption, text, children }:Props) {
   return(

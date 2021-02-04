@@ -28,10 +28,14 @@ export default function Markdown({post}: {post: FrontMetter}){
     return (
         <Layout>
             {/* <h1 onClick={handle}>{post.title}</h1> */}
-            <p className={utilStyles.panel}>{post.author.name} {post.date} 
-                <img src={post.author.picture} width="64px"
-                className={utilStyles.borderCircle}
-                alt={post.author.name} srcSet=""/></p>
+            <div className="rows fxBetween">
+            <img src={post.author.picture} width="64px"
+            className={utilStyles.borderCircle}
+            alt={post.author.name} srcSet=""/>
+            <p className={`fxSelfEnd ${utilStyles.panel}`}>
+            {post.author.name} {new Date(post.date).toLocaleString()}
+            </p>
+            </div>
             <div dangerouslySetInnerHTML={{__html:`${md}`}}></div>
         </Layout>
     );
@@ -45,7 +49,7 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  console.log("+++++++++++++++getStaticProps", params);
+  console.log("+++++++++++++++[...slug] getStaticProps", params);
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -66,12 +70,14 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths(context:any) {
-    console.log("+++++++++++++++getStaticPaths", context);
-    const posts = getPosts(['slug'])
-    return {
-        paths: posts.map((posts) => {
-            return { params: { slug: [posts.slug] } }
-        }),
-        fallback: false,
-    }
+  const posts = getPosts(['slug'])
+  let locale = context.locale ?? 'zh-CN';
+  let paths = posts.map((posts) => {
+    return { locale, params: { slug: [posts.slug] } }
+  })
+  console.log("+++++++++++++++[...slug] getStaticPaths", context, paths);
+  return {
+    fallback: false,
+    paths,
+  }
 }

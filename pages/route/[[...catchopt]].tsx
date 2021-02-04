@@ -27,14 +27,15 @@ export async function getStaticProps(context: any) {
     }
 }
 
-export async function getStaticPaths(props:any) {
-    console.log("+++++++++++++++Optional Catch-all getStaticPaths", props);
+export async function getStaticPaths(context:any) {
+    console.log("+++++++++++++++Optional Catch-all getStaticPaths", context);
     const res = await fetch(`https://github.com/manifest.json`)
     const data = await res.json()
+    let locale = context.locale ?? 'zh-CN';
     let paths = [
-        {params:{ catchopt: ['catch', 'all'] }},
-        {params:{ catchopt: ['catch', data.name] }},
-        {params:{ catchopt: false }}, 
+        {params:{ locale, catchopt: ['catch', 'all'] }},
+        {params:{ locale, catchopt: ['catch', data.name] }},
+        {params:{ locale, catchopt: false }}, 
     ]
     return { paths, fallback: false }
 }

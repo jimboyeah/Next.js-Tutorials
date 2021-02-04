@@ -3,20 +3,16 @@ import Link from 'next/link'
 import Posts from './posts/posts'
 import CardLink from '../components/CardLink'
 import Layout, {siteTitle} from '../components/layout'
-import {FrontMetter, getPostSlugs, getPosts} from '../utils/api'
+import {FrontMetter, MetterKey, getPostSlugs, getPosts} from '../utils/api'
 
 const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
 export async function getStaticProps(context:any){
   console.log('++++++++++++++++getStaticProps', context);
   let mdFiles:{[folder:string]:FrontMetter[]} = {};
   let mdTree = getPostSlugs()
-  mdTree.list.map((it, id) => {
-    mdFiles[mdTree.folder] = (getPosts(fields, mdTree.list, mdTree.folder))
-  })
+  mdFiles[mdTree.folder] = (getPosts(fields, mdTree.list, mdTree.folder))
   mdTree.tree && mdTree.tree.map((sub) => {
-    sub.list.map((it, id) => {
-      mdFiles[sub.folder] = (getPosts(fields, sub.list, sub.folder))
-    })
+    mdFiles[sub.folder] = (getPosts(fields, sub.list, sub.folder))
   })
   return {
     props: {mdFiles, mdTree}
@@ -40,17 +36,22 @@ export default function Home(props:any) {
 
         <div className="grid">
           
-          🚩<Link href="/route/normal"><a>Normal Link</a></Link>
-          🚩<Link href="/route/normal" as="/route/normal?more=yes"><a>Normal As</a></Link>
+          <div className="card columns col37">
+          <h3>路由测试</h3>
+          <span>🚩<Link href="/route/normal"><a>Normal Link</a></Link></span>
+          <span>🚩<Link href="/route/normal" as="/route/normal?more=yes"><a>Normal As</a></Link></span>
 
-          🚩<Link href="/route/dynamic"><a>Dynamic Link</a></Link>
-          🚩<Link href="/route/dynamic" as="/route/more?more=yes"><a>Dynamic More</a></Link>
+          <span>🚩<Link href="/route/dynamic"><a>Dynamic Link</a></Link></span>
+          <span>🚩<Link href="/route/dynamic" as="/route/more?more=yes"><a>Dynamic More</a></Link></span>
 
-          🚩<Link href="/route/catch/all"><a>Catch All</a></Link>
-          🚩<Link href="/route/catch/GitHub?more=yes"><a>Catch GitHub</a></Link>
+          <span>🚩<Link href="/route/catch/all"><a>Catch All</a></Link></span>
+          <span>🚩<Link href="/route/catch/GitHub?more=yes"><a>Catch GitHub</a></Link></span>
+          </div>
 
-          <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." />
-          <CardLink href="/posts/build" caption="Build" text={` Build log `} />
+          {/* <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." /> */}
+          <div className="col37 grid">
+          {<CardLink href="/posts/build" caption="Build" text={` Build log `} />}
+          </div>
 
           <Posts {...props} />
 
@@ -68,7 +69,7 @@ export default function Home(props:any) {
         </a>
       </footer>
 
-      <style jsx global>{`
+      <style jsx>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -125,7 +126,7 @@ export default function Home(props:any) {
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 3rem;
         }
 
         .title,
