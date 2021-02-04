@@ -40,10 +40,12 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
     if (sta.isDirectory()) {
       subs.push(join(folder, it))
       delete list[id]
+    } else {
+      list[id] = parse(it).name // for base with extension
     }
   })
   list = list.filter(it => !!it)
-  let tree = subs.map(it => getPostSlugs(it.substr(0, process.cwd().length + 1)))
+  let tree = subs.map(it => getPostSlugs(it))
   return { folder, list, tree };
 }
 
@@ -83,7 +85,7 @@ export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder:
  * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
 export function getPostBySlug(slug: string[] | string, fields: MetterKey[] = [], folder: string = 'Docs') {
-  const realSlug = (typeof slug === 'string') ? slug.replace(/\.md$/, '') : join(...slug)
+  const realSlug = ((typeof slug === 'string') ? slug : join(...slug)).replace(/\.md$/, '')
   const fullPath = join(join(process.cwd(), folder), `${realSlug}.md`)
   const fileContents = FileSystem.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)

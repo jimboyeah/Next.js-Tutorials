@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router'
-import { getPostBySlug, getPosts, FrontMetter } from '../../utils/api'
+import { getPostBySlug, getPostSlugs, FrontMetter } from '../../utils/api'
 import Layout from '../../components/layout'
 import Marked, {Renderer} from 'marked'
 import utilStyles from '../../styles/utils.module.css'
@@ -41,12 +41,7 @@ export default function Markdown({post}: {post: FrontMetter}){
     );
 }
 
-
-type Params = {
-  params: {
-    slug: string
-  }
-}
+type Params = { params: { slug: string[]|string } }
 
 export async function getStaticProps({ params }: Params) {
   console.log("+++++++++++++++[...slug] getStaticProps", params);
@@ -60,7 +55,6 @@ export async function getStaticProps({ params }: Params) {
     'coverImage',
   ])
   const content = Marked(post.content || '')
-  //const content = await markdownToHtml(post.content || '')
 
   return {
     props: {
@@ -70,12 +64,21 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths(context:any) {
-  const posts = getPosts(['slug'])
-  let locale = context.locale ?? 'zh-CN';
-  let paths = posts.map((posts) => {
-    return { locale, params: { slug: [posts.slug] } }
+  const slugTree = getPostSlugs()
+  let locale = context.locale ?? 'en';
+  let paths = slugTree.list.map((slug) => {
+    return { locale, params: { slug: [slug] } }
   })
-  console.log("+++++++++++++++[...slug] getStaticPaths", context, paths);
+  slugTree.tree?.map(it => {
+    let dir = it.folder.split(/\/|\\/).splice(1)
+    paths = paths.concat(
+      it.list.map(slug => {
+        return { locale, params: { slug: [...dir, slug] } } 
+      })
+    )
+  })
+
+  console.log("+++++++++++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
   return {
     fallback: false,
     paths,

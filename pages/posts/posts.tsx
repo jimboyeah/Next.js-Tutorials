@@ -9,7 +9,7 @@ function List({ posts, path }:ListProps) {
         <li key={id}> 
           <Link href={{
             pathname:`${path}/${encodeURIComponent(post.slug)}`,
-            query:{slug:['a','b']}
+            query:{qq:['a','b']}
           }} >
             <a title={post.date}>{post.title} - {post.author.name}</a>
           </Link>

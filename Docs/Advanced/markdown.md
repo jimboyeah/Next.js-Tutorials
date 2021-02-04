@@ -12,7 +12,9 @@ ogImage:
 
  👉 Markdown & Webpack Loader
 
-- https://webpack.js.org/concepts/#loaders
+- https://webpack.docschina.org/concepts/loaders/#using-loaders
+- https://webpack.js.org/contribute/writing-a-loader/
+- https://www.webpackjs.com/api/loaders/
 - https://www.npmjs.com/package/remark
 - https://www.npmjs.com/package/markdown-loader
 - https://www.npmjs.com/package/gray-matter
@@ -124,10 +126,9 @@ Webpack 加载器是为 Webpack 在打包时加载指定类型文件的一种插
 
 感叹号作为加载器的处理规则：
 
-- !  - 前缀禁用配置文件中的 normal loader，比如：require("!raw!./script.coffee")
-- !! - 前缀禁用配置文件中所有 loader，比如：require("!!raw!./script.coffee")
-- -! - 前缀禁用配置文件中的 preloader 和 normal loader，不包括 postloader，比如：require("-!raw!./script.coffee")
-
+- !  - 前缀禁用已配置的 normal loader，比如：require("!raw!./script.coffee")
+- !! - 前缀禁用已配置的所有 loader，比如：require("!!raw!./script.coffee")
+- -! - 前缀禁用已配置的 preloader 和 normal loader，不包括 postloader，比如：require("-!raw!./script.coffee")
 
 You may need an additional loader to handle the result of these loaders.
 
@@ -202,7 +203,6 @@ export default function(){
 
 接下来要掌握的内容涉及页面的渲染方式、数据的获取和动态路由，等内容，而且是混合的整体密不可分。
 
-
 一个容易的学习路径是：
 
 - 掌握动态路由的基本使用；
@@ -211,33 +211,106 @@ export default function(){
 
 当然，数据获取这部分可能还需要使用 Fetch API 或者文件处理，或者数据之类的方法。
 
+为了示范读取 Markdown 文档，需要一个编写一个 API 文件来处理。注意，这是服务器端代码，请在`getStaticPaths`和`getStaticProps`函数内调用：
 
-为了示范读取 Markdown 文档，需要一个编写一个 API 文件来处理：
 
 ```tsx
-import fs from 'fs'
-import { join } from 'path'
+import FileSystem from 'fs'
+import path, { join, dirname, parse } from 'path'
 import matter from 'gray-matter'
 
-const postsDirectory = join(process.cwd(), '_posts')
+export type FrontMetter = {
+  title: string,
+  date: string,
+  slug: string,
+  author: { name: string, picture: string },
+  content: string,
+  excerpt: string,
+  coverImage: string,
+}
+export type MetterKey = keyof FrontMetter;
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+export type SlugTree = {
+  folder: string,
+  list: string[],
+  tree?: SlugTree[],
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+/**
+ * @param {string} folder path to the root, default: Docs
+ * @returns {SlugTree} markdown filenames
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
+ */
+export function getPostSlugs(folder: string = 'Docs'): SlugTree {
+  let subs: string[] = []
+  let path = join(process.cwd(), folder)
+  let list = FileSystem.readdirSync(path)
+  console.log("========================getPostSlugs", folder)
+  list.map((it, id) => {
+    let sta = FileSystem.statSync(join(path, it))
+    if (sta.isDirectory()) {
+      subs.push(join(folder, it))
+      delete list[id]
+    } else {
+      list[id] = parse(it).name // for base with extension
+    }
+  })
+  list = list.filter(it => !!it)
+  let tree = subs.map(it => getPostSlugs(it))
+  return { folder, list, tree };
+}
 
-  type Items = {
-    [key: string]: string
+/**
+ * @param {fields} markdown file's front-matter fields be return
+ * @param {string} folder path to the root, default: Docs
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
+ */
+export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder: string = 'Docs') {
+  console.log("========================getPosts", !slugs, folder)
+  if (!slugs.length) {
+    const tree = getPostSlugs(folder)
+    slugs = tree.list
   }
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields, folder))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.title > post2.title ? 1 : -1))
+  return posts
+}
+/**
+ * @param slug 
+ * @param fields 
+ * @param folder 
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
+ */
+export function getPostBySlug(slug: string[] | string, fields: MetterKey[] = [], folder: string = 'Docs') {
+  const realSlug = ((typeof slug === 'string') ? slug : join(...slug)).replace(/\.md$/, '')
+  const fullPath = join(join(process.cwd(), folder), `${realSlug}.md`)
+  const fileContents = FileSystem.readFileSync(fullPath, 'utf8')
+  const { data, content } = matter(fileContents)
+  console.log("========================getPostBySlug", slug, fullPath, data.title)
 
-  const items: Items = {}
+  const items: FrontMetter = {} as FrontMetter
 
-  // Ensure only the minimal needed data is exposed
+  // populate front-matter data and exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug
@@ -253,27 +326,16 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   return items
 }
-
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  return posts
-}
 ```
 
 基于数据依赖的静态渲染方式再对 MD 呈现组件改造，文件名为 `pages/tutorial/[slug].tsx` ，使其能在构建时处理 docs 目录下的文档：
 
 ```tsx
 import {useRouter} from 'next/router'
-import { getPostBySlug, getAllPosts } from '../../libs/api'
+import { getPostBySlug, getPostSlugs, FrontMetter } from '../../utils/api'
 import Layout from '../../components/layout'
 import Marked, {Renderer} from 'marked'
 import utilStyles from '../../styles/utils.module.css'
-
-// import TAssets from '../../docs/tutorial-assets.md'
 
 Marked.setOptions({
     renderer: new Renderer(),
@@ -285,24 +347,13 @@ Marked.setOptions({
     smartLists: true,
     smartypants: false
 });
-// let output = Marked(md, opts)
-// let content = Marked('I am using **__markdown__**.')
 
-type MdPost = {
-    title: string,
-    date: string,
-    slug: string,
-    author: { name: string, picture: string },
-    content: string,
-    ogImage: string,
-    coverImage: string,
-}
-
-export default function Markdown({post}: {post: MdPost}){
+export default function Markdown({post}: {post: FrontMetter}){
     let router = useRouter()
+    console.log("Markdown", router.query, router.asPath);
+    
     let slug = router.query.slug as string;
     let md = post.content ?? "<h1>NOT FOUND</h1>";
-    console.log('Markdown', slug, post.author);
     let handle = (ev:any) => {
         console.log(slug, md, ev);
         alert(slug);
@@ -310,34 +361,33 @@ export default function Markdown({post}: {post: MdPost}){
     return (
         <Layout>
             {/* <h1 onClick={handle}>{post.title}</h1> */}
-            <p className={utilStyles.panel}>{post.author.name} {post.date} 
-                <img src={post.author.picture} width="64px"
-                className={utilStyles.borderCircle}
-                alt={post.author.name} srcSet=""/></p>
+            <div className="rows fxBetween">
+            <img src={post.author.picture} width="64px"
+            className={utilStyles.borderCircle}
+            alt={post.author.name} srcSet=""/>
+            <p className={`fxSelfEnd ${utilStyles.panel}`}>
+            {post.author.name} {new Date(post.date).toLocaleString()}
+            </p>
+            </div>
             <div dangerouslySetInnerHTML={{__html:`${md}`}}></div>
         </Layout>
     );
 }
 
-
-type Params = {
-  params: {
-    slug: string
-  }
-}
+type Params = { params: { slug: string[]|string } }
 
 export async function getStaticProps({ params }: Params) {
+  console.log("+++++++++++++++[...slug] getStaticProps", params);
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
     'slug',
     'author',
     'content',
-    'ogImage',
+    'excerpt',
     'coverImage',
   ])
   const content = Marked(post.content || '')
-  //const content = await markdownToHtml(post.content || '')
 
   return {
     props: {
@@ -346,14 +396,26 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
-    const posts = getAllPosts(['slug'])
-    return {
-        paths: posts.map((posts) => {
-            return { params: { slug: posts.slug } }
-        }),
-        fallback: false,
-    }
+export async function getStaticPaths(context:any) {
+  const slugTree = getPostSlugs()
+  let locale = context.locale ?? 'en';
+  let paths = slugTree.list.map((slug) => {
+    return { locale, params: { slug: [slug] } }
+  })
+  slugTree.tree?.map(it => {
+    let dir = it.folder.split(/\/|\\/).splice(1)
+    paths = paths.concat(
+      it.list.map(slug => {
+        return { locale, params: { slug: [...dir, slug] } } 
+      })
+    )
+  })
+
+  console.log("+++++++++++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
+  return {
+    fallback: false,
+    paths,
+  }
 }
 ```
 
