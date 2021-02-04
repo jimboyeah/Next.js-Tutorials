@@ -28,7 +28,7 @@ img {
 pre {
     padding: 0 16px;
     background: darkblue;
-    color: rgb(202, 200, 193);
+    color: rgb(202, 200, 193) !important;
     white-space: break-spaces;
 }
 .bgDarkblue {

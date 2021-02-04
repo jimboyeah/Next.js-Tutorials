@@ -22,6 +22,13 @@ export type SlugTree = {
 /**
  * @param {string} folder path to the root, default: Docs
  * @returns {SlugTree} markdown filenames
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
 export function getPostSlugs(folder: string = 'Docs'): SlugTree {
   let subs: string[] = []
@@ -42,22 +49,43 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
 /**
  * @param {fields} markdown file's front-matter fields be return
  * @param {string} folder path to the root, default: Docs
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
-export function getPosts(fields: MetterKey[] = [], folder: string = 'Docs') {
-  const tree = getPostSlugs(folder)
-  const posts = tree.list
+export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder: string = 'Docs') {
+  if (!slugs) {
+    const tree = getPostSlugs(folder)
+    slugs = tree.list
+  }
+  const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, folder))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.title > post2.title ? 1 : -1))
   return posts
 }
-
+/**
+ * @param slug 
+ * @param fields 
+ * @param folder 
+ * @see
+ * Server-side code
+ * API exported from this script should be use only in getStaticProps()
+ * where is a proper place to write server-side codes.
+ * See also:
+ * https://next-code-elimination.now.sh/
+ * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
+ */
 export function getPostBySlug(slug: string[] | string, fields: MetterKey[] = [], folder: string = 'Docs') {
-  console.log("========================getPostBySlug", slug)
   const realSlug = (typeof slug === 'string') ? slug.replace(/\.md$/, '') : join(...slug)
   const fullPath = join(join(process.cwd(), folder), `${realSlug}.md`)
   const fileContents = FileSystem.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
+  console.log("========================getPostBySlug", slug, fullPath, data.title)
 
   const items: FrontMetter = {} as FrontMetter
 

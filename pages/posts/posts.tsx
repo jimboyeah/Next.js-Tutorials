@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import {parse} from 'path'
 import { FrontMetter, getPostSlugs, getPosts, MetterKey } from '../../utils/api'
 
 function List({ posts }:{posts: FrontMetter[]}) {
@@ -19,26 +18,22 @@ function List({ posts }:{posts: FrontMetter[]}) {
   )
 }
 
-const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
-
-let Empty = ({folder}:{folder?:string}) => {
-  return (<h1></h1>)
-}
-
-let Posts = ({folder}:{folder?:string}) => {
-  let md = getPostSlugs(folder)
+let Posts = (props:any) => {
+  console.log("++++++++Posts", props);
+  let {mdTree, mdFiles} = props;
+  if(!mdTree) return(<div className="card">Loading...</div>)
   return (
     <>
     <div className="card">
     <h3>Docs</h3>
-    <List posts={getPosts(fields, md.folder)} />
+    <List posts={mdFiles[mdTree.folder]} />
     </div>
     {
-    md.tree && md.tree.map((it,id) => (
+    mdTree.tree && mdTree.tree.map((it,id) => (
       <>
       <div className="card" key={id}>
-        <h3>{parse(it.folder).base}</h3>
-        <List posts={getPosts(fields, it.folder)} />
+        <h3>{it.folder.split('/').pop()}</h3>
+        <List posts={mdFiles[it.folder]} />
       </div>
       </>
     ))
@@ -47,5 +42,13 @@ let Posts = ({folder}:{folder?:string}) => {
   )
 }
 
+export async function getStaticProps(props: any) {
+    console.log("Will component execute getStaticProps?", props);
+    return {
+        props: {
+            data: JSON.stringify(props)
+        }
+    }
+}
 
 export default Posts;

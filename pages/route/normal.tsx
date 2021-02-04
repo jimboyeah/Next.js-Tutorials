@@ -13,3 +13,11 @@ export default function Normal(props:any){
     </>
     )
 }
+// export async function getStaticProps(context: any) {
+//     console.log("+++++++++++++++getStaticcontext", context);
+//     return {
+//         props: {
+//             data: JSON.stringify(context)
+//         }
+//     }
+// }

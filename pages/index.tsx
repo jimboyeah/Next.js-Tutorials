@@ -3,8 +3,27 @@ import Link from 'next/link'
 import Posts from './posts/posts'
 import CardLink from '../components/CardLink'
 import Layout, {siteTitle} from '../components/layout'
+import {FrontMetter, getPostSlugs, getPosts} from '../utils/api'
 
-export default function Home() {
+const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
+export async function getStaticProps(context:any){
+  console.log('++++++++++++++++getStaticProps', context);
+  let mdFiles:{[folder:string]:FrontMetter[]} = {};
+  let mdTree = getPostSlugs()
+  mdTree.list.map((it, id) => {
+    mdFiles[mdTree.folder] = (getPosts(fields, mdTree.list, mdTree.folder))
+  })
+  mdTree.tree && mdTree.tree.map((sub) => {
+    sub.list.map((it, id) => {
+      mdFiles[sub.folder] = (getPosts(fields, sub.list, sub.folder))
+    })
+  })
+  return {
+    props: {mdFiles, mdTree}
+  }
+}
+
+export default function Home(props:any) {
   return (
     <Layout home>
       <Head>
@@ -14,7 +33,7 @@ export default function Home() {
 
       <section>
         <h1 className="title">
-          欢迎来到 <a href="https://github.com/jimboyeah/demo/tree/Next.js-Tutorials">Next.js 教程!</a>
+          欢迎来到 <a href="https://github.com/jimboyeah/Next.js-Tutorials">Next.js 教程!</a>
         </h1>
 
         <p className="description"> React SSR 服务端渲染由此开启！</p>
@@ -33,7 +52,7 @@ export default function Home() {
           <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." />
           <CardLink href="/posts/build" caption="Build" text={` Build log `} />
 
-          <Posts />
+          <Posts {...props} />
 
         </div>
       </section>
