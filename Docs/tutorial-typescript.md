@@ -2,7 +2,7 @@
 title: '👉 08 TypeScript 配置使用'
 excerpt: 'Next.js 提供了 TypeScript 集成体验，通过配置 TypeScript，即可以转换 JavaScript 开发环境，以使用 Next.js 的类型规范。'
 coverImage: '/20161106s.jpg'
-date: '2021-02-03T03:01:07.322Z'
+date: '2021-02-02T19:01:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'

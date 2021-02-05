@@ -2,7 +2,7 @@
 title: '👉 07 样式配置建议'
 excerpt: '有时候需要给组件指定不止一个的样式类名，上面的列子中使用了两种方法，一是使用模板字符串将多个样式类名插入，另一个方法是使用数组的 join 方法以空格联接。'
 coverImage: '/20161106s.jpg'
-date: '2021-02-03T03:01:07.322Z'
+date: '2021-02-02T19:01:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'

@@ -31,7 +31,7 @@ export default function Layout({children, home}:Props) {
         <>
           <img
             src="/daylily.jpg"
-            className={`${styles.grow} ${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+            className={`grow ${styles.headerHomeImage} ${utilStyles.borderCircle}`}
             title={subTitle}
             alt={subTitle}
           />
@@ -42,7 +42,7 @@ export default function Layout({children, home}:Props) {
         <Link href="/">
           <a href="/">
           <img src="/micro_s.png" alt={microView} 
-          className={[styles.grow, styles.headerImage, utilStyles.borderCircle].join(' ')}
+          className={['grow', styles.headerImage, utilStyles.borderCircle].join(' ')}
           srcSet=""/>
           </a>
         </Link>

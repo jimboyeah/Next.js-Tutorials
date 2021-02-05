@@ -2,7 +2,7 @@
 title: '👉 06 布局打磨'
 excerpt: '现在有了基本的站点结构，样式布局还需要打磨 Polishing Layout。'
 coverImage: '/20161106s.jpg'
-date: '2021-02-03T03:01:07.322Z'
+date: '2021-02-02T19:01:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'

@@ -2,7 +2,7 @@
 title: '👉 02 工程基本结构'
 excerpt: '页面结构如下，只是展示了一个静态页面，就是一个导出的渲染函数，另外还使用了 `Head` 组件来生成 HTML 的 head 节点下的元信息标签：'
 coverImage: '/20161106s.jpg'
-date: '2021-02-03T03:01:07.322Z'
+date: '2021-02-02T19:01:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'
@@ -121,3 +121,12 @@ ogImage:
 或者使用 React 的 `dangerouslySetInnerHTML` 属性来设置 innerHTML：
 
 	<div dangerouslySetInnerHTML={{__html:`${md}`}}></div>
+
+在以上的构建报告中，看到最后几行，不同的前缀符号表示 Next.js 对工程的文件进行了四种处理：
+
+- λ  (Server)  运行时代表服务端渲染，即页面中实现了 `getInitialProps()` 或 `getServerSideProps())` 方法。
+- ○  (Static)  自动静态化 HTML 渲染，由于页面没有使用初始参数数据；
+- ●  (SSG)     自动静态化生成，静态 HTML + JSON 数据组合成页面，页面实现了 `getServerSideProps())` 方法。
+-    (ISR)     增量静态化重新生成 Incremental Static Regeneration，在页面实现的 `getServerSideProps())` 方法中返回了 `revalidate` 参数；
+
+后面再深入解析这些方法，和页面的渲染。

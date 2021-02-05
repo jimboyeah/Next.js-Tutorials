@@ -4,6 +4,7 @@ import Posts from './posts/posts'
 import CardLink from '../components/CardLink'
 import Layout, {siteTitle} from '../components/layout'
 import {FrontMetter, MetterKey, getPostSlugs, getPosts} from '../utils/api'
+import {useState, MouseEvent} from 'react'
 
 const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
 export async function getStaticProps(context:any){
@@ -20,6 +21,19 @@ export async function getStaticProps(context:any){
 }
 
 export default function Home(props:any) {
+
+  const [state, setState] = useState("clear")
+  let EchoAPI = (ev:MouseEvent<HTMLAnchorElement>) => {
+    ev.stopPropagation()
+    ev.preventDefault()
+    fetch(ev.currentTarget.href)
+    .then(res => res.text())
+    .then(txt => setState(txt))
+    setTimeout(() => {
+      setState("clear")
+    }, 5000);
+  }
+
   if(props.locale==="en") {
     return (
       <Layout home>
@@ -42,7 +56,7 @@ export default function Home(props:any) {
           欢迎来到 <a href="https://github.com/jimboyeah/Next.js-Tutorials">Next.js 教程!</a>
         </h1>
 
-        <p className="description"> React SSR 服务端渲染由此开启！</p>
+        <p className="description">开启组件化服务端渲染时代！</p>
 
         <div className="grid">
           
@@ -59,8 +73,13 @@ export default function Home(props:any) {
           </div>
 
           {/* <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." /> */}
-          <div className="col37 grid">
-          {<CardLink href="/posts/build" caption="Build" text={` Build log `} />}
+          <div className="col37 card columns">
+          <h3>其它功能</h3>
+          <span>🚩<Link href="/posts/build">Build log </Link></span>
+          <span>🚩<Link href="/posts/flexbox">Flexbox Demo </Link></span>
+          <span>🚩<a href="/api/echo?act=echo" onClick={EchoAPI}>API Route - Echo</a></span>
+          <span>🚩<a href="/api/echo?act=noecho" onClick={EchoAPI}>API Route - No Echo</a></span>
+          {state!=='clear' && <pre className="scroll card console">Output: {state}</pre>}
           </div>
 
           <Posts {...props} />
@@ -80,6 +99,14 @@ export default function Home(props:any) {
       </footer>
 
       <style jsx>{`
+        .console { 
+          position: fixed;
+          max-height: 20vh;
+          bottom: 0;
+          right: 0;
+          overflow-y: scroll;
+          white-space:word-break;
+        }
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -136,7 +163,7 @@ export default function Home(props:any) {
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
 
         .title,

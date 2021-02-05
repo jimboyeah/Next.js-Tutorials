@@ -2,7 +2,7 @@
 title: '👉 14 Markdown 文档处理'
 excerpt: '添加 Markdown 文档功能，作为简洁的内容格式，必需要支持 MD 文件内容呈现。另外介绍了 Webpack 加载器，这是在打包时加载指定类型文件的一种插件，即专用于文件加载。'
 coverImage: '/20161106s.jpg'
-date: '2021-02-03T15:35:07.322Z'
+date: '2021-02-03T07:35:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'

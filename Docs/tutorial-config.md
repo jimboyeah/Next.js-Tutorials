@@ -2,7 +2,7 @@
 title: '👉 09 next.config.js 配置脚本'
 excerpt: 'Next.js 在顶级目录下提供了 next.config.js 配置脚本，可以随时建立这个配置文件'
 coverImage: '/20161106s.jpg'
-date: '2021-02-05T02:10:07.322Z'
+date: '2021-02-04T18:10:07.322Z'
 author:
     name: Jeango
     picture: '/jeango.jpg'
