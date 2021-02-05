@@ -251,14 +251,15 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
   let subs: string[] = []
   let path = join(process.cwd(), folder)
   let list = FileSystem.readdirSync(path)
-  console.log("========================getPostSlugs", folder)
+  console.log("====== getPostSlugs", folder)
   list.map((it, id) => {
     let sta = FileSystem.statSync(join(path, it))
     if (sta.isDirectory()) {
       subs.push(join(folder, it))
       delete list[id]
     } else {
-      list[id] = parse(it).name // for base with extension
+      // for base with extension
+      list[id] = [...folder.split(/\/|\\/).splice(1), parse(it).name].join("/")
     }
   })
   list = list.filter(it => !!it)
@@ -278,13 +279,13 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
  * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
 export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder: string = 'Docs') {
-  console.log("========================getPosts", !slugs, folder)
+  console.log("====== getPosts", slugs, folder)
   if (!slugs.length) {
     const tree = getPostSlugs(folder)
     slugs = tree.list
   }
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields, folder))
+    .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.title > post2.title ? 1 : -1))
   return posts
@@ -306,7 +307,7 @@ export function getPostBySlug(slug: string[] | string, fields: MetterKey[] = [],
   const fullPath = join(join(process.cwd(), folder), `${realSlug}.md`)
   const fileContents = FileSystem.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-  console.log("========================getPostBySlug", slug, fullPath, data.title)
+  console.log("====== getPostBySlug", slug, fullPath, data.title)
 
   const items: FrontMetter = {} as FrontMetter
 
@@ -377,7 +378,7 @@ export default function Markdown({post}: {post: FrontMetter}){
 type Params = { params: { slug: string[]|string } }
 
 export async function getStaticProps({ params }: Params) {
-  console.log("+++++++++++++++[...slug] getStaticProps", params);
+  console.log("++++++[...slug] getStaticProps", params);
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -398,7 +399,7 @@ export async function getStaticProps({ params }: Params) {
 
 export async function getStaticPaths(context:any) {
   const slugTree = getPostSlugs()
-  let locale = context.locale ?? 'en';
+  let locale = context.locale ?? 'zh-CN';
   let paths = slugTree.list.map((slug) => {
     return { locale, params: { slug: [slug] } }
   })
@@ -406,12 +407,12 @@ export async function getStaticPaths(context:any) {
     let dir = it.folder.split(/\/|\\/).splice(1)
     paths = paths.concat(
       it.list.map(slug => {
-        return { locale, params: { slug: [...dir, slug] } } 
+        return { locale, params: { slug: slug.split('/') } } 
       })
     )
   })
 
-  console.log("+++++++++++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
+  console.log("++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
   return {
     fallback: false,
     paths,

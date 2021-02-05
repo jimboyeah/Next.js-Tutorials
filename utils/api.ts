@@ -41,7 +41,8 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
       subs.push(join(folder, it))
       delete list[id]
     } else {
-      list[id] = parse(it).name // for base with extension
+      // for base with extension
+      list[id] = [...folder.split(/\/|\\/).splice(1), parse(it).name].join("/")
     }
   })
   list = list.filter(it => !!it)
@@ -61,13 +62,13 @@ export function getPostSlugs(folder: string = 'Docs'): SlugTree {
  * https://www.nextjs.cn/docs/basic-features/data-fetching#write-server-side-code-directly
  */
 export function getPosts(fields: MetterKey[] = [], slugs: string[] = [], folder: string = 'Docs') {
-  console.log("====== getPosts", !slugs, folder)
+  console.log("====== getPosts", slugs, folder)
   if (!slugs.length) {
     const tree = getPostSlugs(folder)
     slugs = tree.list
   }
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields, folder))
+    .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.title > post2.title ? 1 : -1))
   return posts

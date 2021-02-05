@@ -8,7 +8,7 @@ function List({ posts, path }:ListProps) {
       {posts.map((post, id) => (
         <li key={id}> 
           <Link href={{
-            pathname:`${path}/${encodeURIComponent(post.slug)}`,
+            pathname:`${path}/${post.slug}`,
             query:{qq:['a','b']}
           }} >
             <a title={post.date}>{post.title} - {post.author.name}</a>
@@ -23,6 +23,8 @@ type Props = {mdTree:SlugTree, mdFiles:{[folder:string]:FrontMetter[]}};
 
 let Posts = (props: Props) => {
   let {mdTree, mdFiles} = props;
+  console.log('------ Posts', mdTree.tree)
+  
   if(!mdTree) return(<div className="card">Loading...</div>)
   return (
     <>
@@ -34,7 +36,7 @@ let Posts = (props: Props) => {
     mdTree.tree && mdTree.tree.map((it:SlugTree, id:number) => (
       <div className="card col37" key={id}>
         <h3>{it.folder.split(/\\/).pop()}</h3>
-        <List posts={mdFiles[it.folder]} path={`/tutorial/${it.folder.split(/\\/).slice(1).join("/")}`} />
+        <List posts={mdFiles[it.folder]} path={`/tutorial`} />
       </div>
     ))
     }

@@ -73,7 +73,7 @@ export async function getStaticPaths(context:any) {
     let dir = it.folder.split(/\/|\\/).splice(1)
     paths = paths.concat(
       it.list.map(slug => {
-        return { locale, params: { slug: [...dir, slug] } } 
+        return { locale, params: { slug: slug.split('/') } } 
       })
     )
   })
