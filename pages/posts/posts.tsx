@@ -23,7 +23,7 @@ type Props = {mdTree:SlugTree, mdFiles:{[folder:string]:FrontMetter[]}};
 
 let Posts = (props: Props) => {
   let {mdTree, mdFiles} = props;
-  console.log('------ Posts', mdTree.tree)
+  console.log('------ Posts', mdTree?.tree)
   
   if(!mdTree) return(<div className="card">Loading...</div>)
   return (
