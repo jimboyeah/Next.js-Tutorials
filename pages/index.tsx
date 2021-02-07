@@ -21,17 +21,19 @@ export async function getStaticProps(context:any){
 }
 
 export default function Home(props:any) {
-
+  let timer:NodeJS.Timeout;
   const [state, setState] = useState("clear")
+  
   let EchoAPI = (ev:MouseEvent<HTMLAnchorElement>) => {
     ev.stopPropagation()
     ev.preventDefault()
     fetch(ev.currentTarget.href)
     .then(res => res.text())
     .then(txt => setState(txt))
-    setTimeout(() => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
       setState("clear")
-    }, 5000);
+    }, 6000);
   }
 
   if(props.locale==="en") {
@@ -75,8 +77,9 @@ export default function Home(props:any) {
           {/* <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." /> */}
           <div className="col37 card columns">
           <h3>其它功能</h3>
-          <span>🚩<Link href="/posts/build">Build log </Link></span>
+          <span>🚩<a href="/posts/build">Build log</a></span>
           <span>🚩<Link href="/posts/flexbox">Flexbox Demo </Link></span>
+          <span>🚩<Link href="/posts/graphql">API Route - GraphQL</Link></span>
           <span>🚩<a href="/api/echo?act=echo" onClick={EchoAPI}>API Route - Echo</a></span>
           <span>🚩<a href="/api/echo?act=noecho" onClick={EchoAPI}>API Route - No Echo</a></span>
           {state!=='clear' && <pre className="scroll card console">Output: {state}</pre>}
@@ -98,6 +101,11 @@ export default function Home(props:any) {
         </a>
       </footer>
 
+      {<span dangerouslySetInnerHTML={{__html:`<!--[if IE]>
+      <div style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:10;">According to the conditional comment this is IE<br /></div>
+      <style>body { display:block !important; }</style>
+      <![endif]-->`}}></span>}
+      
       <style jsx>{`
         .console { 
           position: fixed;
@@ -161,7 +169,7 @@ export default function Home(props:any) {
         }
 
         .title {
-          margin: 0;
+          margin: 1em 0 0 0;
           line-height: 1.15;
           font-size: 2.5rem;
         }

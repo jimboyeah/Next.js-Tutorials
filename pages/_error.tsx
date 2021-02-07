@@ -13,9 +13,7 @@ export default function Error({ Component, pageProps }:AppProps) {
       <h1 className="col12 fxFixed rows fxCenter">I'm Nothing</h1>
     </div>
     <style jsx global>{`
-    div { margin-top: -220px; }
     .round { border-radius: 16px;  }
-
     `}</style>
     </>
   )

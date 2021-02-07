@@ -105,6 +105,9 @@ pre {
 }
 
 .max { min-width: 100vw; min-height: 100vh; }
+.taLeft { text-align: left; }
+.taCenter { text-align: center; }
+.taRight { text-align: right; }
 
 .grid {
     display: flex;

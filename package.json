@@ -5,16 +5,20 @@
   "scripts": {
     "dev": "set NODE_OPTIONS='--inspect' && next dev",
     "build": "next build",
-    "start": "next start -p 80"
+    "start": "next start -p 80",
+    "graphql": "node graphql-micro -p 80"
   },
   "dependencies": {
+    "apollo-server-micro": "^2.11.0",
     "cors": "^2.8.5",
+    "graphql": "^14.6.0",
     "gray-matter": "^4.0.2",
     "markdown-loader": "^5.1.0",
     "marked": "^1.1.1",
     "next": "^10.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "swr": "^0.1.18"
   },
   "devDependencies": {
     "@types/cors": "^2.8.9",
