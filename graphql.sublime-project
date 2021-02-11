@@ -63,26 +63,26 @@
 			[
 				"*.noting"
 			],
-			"name": "React Next.js Project",
+			// "name": "React Next.js Project",
 			"path": "."
 		},
 		{
-			"path": "C:\\coding\\md-code\\react-server-components-demo"
+			"path": "C:\\coding\\md-code\\graphql-js-main"
 		},
 		{
-			"path": "C:\\coding\\md-code\\reactjs.org-master"
+			"path": "C:\\coding\\md-code\\graphql-playground-1.8.10"
 		},
 		{
-			"path": "C:\\coding\\md-code\\next.js-canary"
+			"path": "C:\\coding\\md-code\\graphql-spec-main"
 		},
 		{
-			"path": "C:\\coding\\md-code\\next-learn-starter"
+			"path": "C:\\coding\\md-code\\graphiql-main"
 		},
 		{
-			"path": "C:\\coding\\md-code\\next-visual-event"
+			"path": "C:\\coding\\md-code\\language-server-protocol"
 		},
 		{
-			"path": "C:\\coding\\md-code\\realm-js-master"
+			"path": "C:\\coding\\md-code\\graphql.github.io-source"
 		}
 	],
 	"settings":

@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
+import React from 'react'
 
 export default function ME() {
   return (
-    <Layout className="container">
+    <Layout>
       <Head>
         <title>It's Jeango</title>
         <link rel="icon" href="/favicon.ico" />

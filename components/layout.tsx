@@ -3,15 +3,16 @@ import Link from 'next/link'
 import CardLink from './CardLink'
 import styles from '../styles/layout.module.css'
 import utilStyles from '../styles/utils.module.css'
+import React from 'react'
 
 const name ="Jeango"
 export let siteTitle = "Next.js Lectures"
 export let subTitle = "My Vegetable Garden"
 export let microView = "Micro View of Allium"
 
-type Props = { children: any, home?: boolean }
+type Props = { children: any, home?: boolean, className?:string }
 
-export default function Layout({children, home}:Props) {
+export default function Layout({children, home, className}:Props) {
   let basicImage = 'https://assets.vercel.com/image/upload/front/assets/design/nextjs-black-logo.svg';
   return (
     <>
@@ -25,7 +26,7 @@ export default function Layout({children, home}:Props) {
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <div className={styles.container}>
+      <div className={className ?? styles.container}>
       <header className={styles.header}>
       {home ? (
         <>

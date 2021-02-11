@@ -1,5 +1,6 @@
 import Layout from '../../components/layout'
 import {useRouter} from 'next/router'
+import React from 'react'
 
 export default function Catchopt(props:any){
     const Router = useRouter()

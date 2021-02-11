@@ -1,5 +1,5 @@
 import App, {AppProps} from 'next/app'
-import {Component} from 'react'
+import React, {Component} from 'react'
 import '../styles/theme.css'
 
 export default class AppTutorial extends Component {

@@ -1,5 +1,5 @@
 import Layout from '../../components/layout'
-import {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 export let NamedColors = [
     {hex: '#ffe4c4', hsl: 'hsl(255,228,196)', name: 'bisque'},

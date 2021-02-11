@@ -1,6 +1,7 @@
 import Marked, {Renderer} from 'marked'
 import Layout from '../../components/layout'
 import content from '../../Docs/tutorial-assets.md'
+import React from 'react'
 // let content = 'NOTHING';
 
 Marked.setOptions({

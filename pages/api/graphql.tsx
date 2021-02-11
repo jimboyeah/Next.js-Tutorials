@@ -1,28 +1,73 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
-import { GraphQLResolveInfo } from 'graphql'
+import { buildSchema, GraphQLResolveInfo } from 'graphql'
 ////////////////////////////////////////////////////////////
-const typeDefs = gql`
+// const typeDefs = buildSchema(`
+const typeDefs = gql(`
   type Query {
-    sayHello: String
-    users(name: String): [User!]!
+    count: Int
+    sayHello(msg:String, time:Int): String
+    users( name: String): [User!]!
+    books(title: String): [Book]
   }
   type User {
+    description: String
+    id: ID
     name: String
   }
-`
+  type Book {
+    author: User
+    title: String
+  }
+  type Mutation {
+    createUser(name: String): User
+    removeUser(id: String): User
+  }
+`)
 let count = 0
+let users = [
+  {id:"00", name:"Eric S. Roberts"},
+  {id:"01", name:"Jeango"},
+  {id:"02", name:"Frank"},
+]
+let books = [
+  {title:"Getting Started from JavaScript to Vue", author: users[0]},
+  {title:"the Art & Science of C Programming", author: users[2]},
+]
 const resolvers = {
   Query: {
-    sayHello(parent, args, context, info: GraphQLResolveInfo) {
-      console.log("sayHello()", parent, args, context);
-      return 'Hello World!';
+    count(parent:any, args:any, context:any, info: GraphQLResolveInfo) {
+      return count++
     },
-    users(parent, args, context, info: GraphQLResolveInfo) {
-      console.log("users()", parent, args, context);
-      let name = args.name ?? 'Next.js'
-      return [{ name: `${name}-${count++}` }]
+    sayHello(parent:any, args:any, context:any, info: GraphQLResolveInfo) {
+      return args.msg ?? 'Hello World!';
     },
+    users(parent:any, args:any, context:any, info: GraphQLResolveInfo) {
+      if(!args.name) return users
+      let found = users.find((it, ik) => (it.name===args.name))
+      console.log("found", found)
+      return found? [found]:[]
+      
+    },
+    books(parent:any, args:{title:string}, context:any, info:GraphQLResolveInfo) {
+      if(!args.title) return books
+      return [books.find( it => it.title==args.title)]
+    }
   },
+  Mutation : {
+    createUser(parent: any, {name}: any){
+      let user = { id: users.length+"", name}
+      users.push(user)
+      return user
+    },
+    removeUser(parent: any, {id}: any){
+      let user = users.find( (it, ik) => {
+        (it.id === id) && delete(users[ik])
+        return (it.id === id)
+      })
+      users = users.filter( it => !!it )
+      return user
+    }
+  }
 }
 ////////////////////////////////////////////////////////////
 export const config = {

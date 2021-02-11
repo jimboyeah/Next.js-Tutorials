@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Posts from './posts/posts'
-import CardLink from '../components/CardLink'
 import Layout, {siteTitle} from '../components/layout'
 import {FrontMetter, MetterKey, getPostSlugs, getPosts} from '../utils/api'
-import {useState, MouseEvent} from 'react'
+import React, {useState, MouseEvent} from 'react'
+
 
 const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
 export async function getStaticProps(context:any){
@@ -79,9 +79,11 @@ export default function Home(props:any) {
           <h3>其它功能</h3>
           <span>🚩<a href="/posts/build">Build log</a></span>
           <span>🚩<Link href="/posts/flexbox">Flexbox Demo </Link></span>
-          <span>🚩<Link href="/posts/graphql">API Route - GraphQL</Link></span>
+          <span>🚩<Link href="/posts/image">Image Optimize </Link></span>
           <span>🚩<a href="/api/echo?act=echo" onClick={EchoAPI}>API Route - Echo</a></span>
           <span>🚩<a href="/api/echo?act=noecho" onClick={EchoAPI}>API Route - No Echo</a></span>
+          <span>🚩<Link href="/posts/graphql">API Route - GraphQL Playground</Link></span>
+          <span>🚩<Link href="/posts/svg-radialGradient">SVG Playground</Link></span>
           {state!=='clear' && <pre className="scroll card console">Output: {state}</pre>}
           </div>
 
@@ -112,7 +114,6 @@ export default function Home(props:any) {
           max-height: 20vh;
           bottom: 0;
           right: 0;
-          overflow-y: scroll;
           white-space:word-break;
         }
         .container {

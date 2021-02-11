@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FrontMetter, SlugTree } from '../../utils/api'
+import React from 'react'
 
 type ListProps = {posts: FrontMetter[], path:string};
 function List({ posts, path }:ListProps) {
@@ -23,7 +24,7 @@ type Props = {mdTree:SlugTree, mdFiles:{[folder:string]:FrontMetter[]}};
 
 let Posts = (props: Props) => {
   let {mdTree, mdFiles} = props;
-  console.log('------ Posts', mdTree?.tree)
+  // console.log('------ Posts', mdTree?.tree)
   
   if(!mdTree) return(<div className="card">Loading...</div>)
   return (

@@ -57,20 +57,39 @@ img {
     line-height: 1.5;
 }
 
-
 pre {
-    padding: 0 16px;
-    background: darkblue;
-    color: rgb(204, 186, 120) !important;
+    border-radius: 8px;
+    padding: 16px 16px 0;
+    background: #e9e9f0;
+    color: rgb(22, 21, 17) !important;
     white-space: break-spaces;
+    overflow-x: scroll;
+    line-height: 1em;
+    box-shadow: 0 0 1px 1px #dedede;
+    transition: color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
-
+pre:hover { 
+    color: rgb(14, 14, 13) !important; 
+    background: rgb(215, 218, 233); 
+}
+code { 
+    white-space: pre; 
+    font-size: 0.7em; 
+}
 
 /** Scrollbar STYLE */
+pre,
+.scroll { overflow-y: scroll; }
+pre::-webkit-scrollbar,
 .scroll::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5;
+    background-color: #F5F5F501;
 }
+pre::-webkit-scrollbar-corner,
+.scroll::-webkit-scrollbar-corner {
+    background: #0000;
+}
+pre::-webkit-scrollbar-thumb,
 .scroll::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -114,9 +133,8 @@ pre {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
     max-width: 52rem;
-    margin-top: 3rem;
+    margin: 3rem auto;
 }
 .rows {
     display: flex;

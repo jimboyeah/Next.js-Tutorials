@@ -3,6 +3,7 @@ import { getPostBySlug, getPostSlugs, FrontMetter } from '../../utils/api'
 import Layout from '../../components/layout'
 import Marked, {Renderer} from 'marked'
 import utilStyles from '../../styles/utils.module.css'
+import React from 'react'
 
 Marked.setOptions({
     renderer: new Renderer(),

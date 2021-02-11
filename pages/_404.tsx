@@ -1,5 +1,6 @@
 import {AppProps} from 'next/app'
 import Link from 'next/link'
+import React from 'react'
 
 // import '../styles/theme.css'
 
