@@ -1,6 +1,10 @@
 import React, {ChangeEvent, useState} from 'react'
 import Layout from '../../components/layout'
 
+  interface SVGProps<SVGRadialGradientElement> {
+    fr ?: number | string
+  }
+
 export default function SVG(props:any){
   let init = {cx: 50, cy: 50, r: 50, fx: 50, fy: 50, fr: 50, spread: "pad"}
   const [Mode, setMode] = useState<Partial<typeof init>>(init)
@@ -33,7 +37,6 @@ export default function SVG(props:any){
                         r={Mode.r+"%"}
                         fx={Mode.fx+"%"}
                         fy={Mode.fy+"%"}
-                        fr={Mode.fr+"%"}
                         id="flameGradient">
             <stop offset="0%" stopColor="white"/>
             <stop offset="10%" stopColor="yellow"/>

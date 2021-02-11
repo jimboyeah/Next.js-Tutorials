@@ -7,7 +7,7 @@ export function Field(name?: string, initValue?: any) {
         let isf = typeof target[propertyKey] === 'function'
         if(isf) throw "@Field meta only use for member not function";
         initValue && (target[propertyKey] = initValue)
-        console.log(`Field[${propertyKey||name}]`, target, propertyKey, this);
+        console.log(`Field[${propertyKey||name}]`, target, propertyKey);
     }
 }
 

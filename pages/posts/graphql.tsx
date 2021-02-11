@@ -24,11 +24,11 @@ let fetcher = ({query, variables}:any = null) => fetch(
 */
 
 let GraphQL = (props:{gql:string}) =>{
-  const refInput = useRef<HTMLInputElement>(null)
+  const refInput = useRef<HTMLTextAreaElement>(null)
   const refVariable = useRef<HTMLInputElement>(null)
   const [state, setState] = useState("")
   // let { data, error } = useSWR('{sayHello}', fetcher)
-  let doKeydown = (ev:React.KeyboardEvent<HTMLInputElement>) => {
+  let doKeydown = (ev:React.KeyboardEvent<HTMLTextAreaElement>) => {
     // console.log(ev.key)
     if(ev.key==="Enter" && ev.ctrlKey) doQuery();
   }
@@ -65,7 +65,7 @@ let GraphQL = (props:{gql:string}) =>{
       <div className="col13 card rows fxAround fxWrap">
         <h3>GraphQL Playground</h3>
         <textarea onKeyDown={doKeydown} className="col11" style={{height:'50vh'}}
-          ref={refInput} type="text" defaultValue="{ sayHello }"/>
+          ref={refInput} defaultValue="{ sayHello }"/>
         <input type="text" className="col11" 
           ref={refVariable} title="query variables" defaultValue={`{ "name": "Jane" }`}/>
         <div className="col11">
