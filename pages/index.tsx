@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Posts from './posts/posts'
+import Posts from '../components/posts'
 import Layout, {siteTitle} from '../components/layout'
 import {FrontMetter, MetterKey, getPostSlugs, getPosts} from '../utils/api'
 import React, {useState, MouseEvent} from 'react'
+import ViewSource from '../components/view-source/view-source'
 
 
 const fields:MetterKey[] = ['slug', 'title', 'date', 'author']
@@ -42,6 +43,7 @@ export default function Home(props:any) {
         <div className="card rows fxCenter fxEvenly">
         <Link href="/" locale="en">✊English coming soon</Link>
         <Link href="/" locale="zh-CN">🚩Chinese</Link>
+        <ViewSource pathname="" />
         </div>
       </Layout>
     )
@@ -55,14 +57,15 @@ export default function Home(props:any) {
 
       <section>
         <h1 className="title">
-          欢迎来到 <a href="https://github.com/jimboyeah/Next.js-Tutorials">Next.js 教程!</a>
+          <a href="https://github.com/jimboyeah/Next.js-Tutorials">Next.js Tutorials!</a>
         </h1>
+        <ViewSource pathname="" />
 
         <p className="description">开启组件化服务端渲染时代！</p>
 
         <div className="grid">
           
-          <div className="card columns col37">
+          <div className="card columns col37 col11s">
           <h3>路由测试</h3>
           <span>🚩<Link href="/route/normal"><a>Normal Link</a></Link></span>
           <span>🚩<Link href="/route/normal" as="/route/normal?more=yes"><a>Normal As</a></Link></span>
@@ -75,7 +78,7 @@ export default function Home(props:any) {
           </div>
 
           {/* <CardLink href="/authors/me" caption="Me &rarr;" text="Come this way..." /> */}
-          <div className="col37 card columns">
+          <div className="card columns col37 col11s">
           <h3>其它功能</h3>
           <span>🚩<a href="/posts/build">Build log</a></span>
           <span>🚩<Link href="/posts/flexbox">Flexbox Demo </Link></span>
@@ -84,7 +87,7 @@ export default function Home(props:any) {
           <span>🚩<a href="/api/echo?act=noecho" onClick={EchoAPI}>API Route - No Echo</a></span>
           <span>🚩<Link href="/posts/graphql">API Route - GraphQL Playground</Link></span>
           <span>🚩<Link href="/posts/svg-radialGradient">SVG Playground</Link></span>
-          {state!=='clear' && <pre className="scroll card console">Output: {state}</pre>}
+          {state!=='clear' && <pre className="scroll console">Output: {state}</pre>}
           </div>
 
           <Posts {...props} />
@@ -108,14 +111,7 @@ export default function Home(props:any) {
       <style>body { display:block !important; }</style>
       <![endif]-->`}}></span>}
       
-      <style jsx>{`
-        .console { 
-          position: fixed;
-          max-height: 20vh;
-          bottom: 0;
-          right: 0;
-          white-space:word-break;
-        }
+      <style jsx="true">{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -126,7 +122,7 @@ export default function Home(props:any) {
         }
 
         main {
-          padding: 5rem 0;
+          padding: 3rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -137,7 +133,7 @@ export default function Home(props:any) {
         footer {
           width: 100%;
           height: 100px;
-          border-top: 1px solid #eaeaea;
+          border-top: 1px solid #f7f5f5;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -206,7 +202,7 @@ export default function Home(props:any) {
         }
       `}</style>
 
-      <style jsx global>{`
+      <style>{`
         html,
         body {
           padding: 0;

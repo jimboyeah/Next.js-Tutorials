@@ -18,24 +18,24 @@ Marked.setOptions({
 
 export default function Markdown({post}: {post: FrontMetter}){
     let router = useRouter()
-    console.log("Markdown", router.query, router.asPath);
+    // console.log("Markdown", router.query, router.asPath);
     
     let slug = router.query.slug as string;
     let md = post.content ?? "<h1>NOT FOUND</h1>";
     let handle = (ev:any) => {
-        console.log(slug, md, ev);
+        // console.log(slug, md, ev);
         alert(slug);
     }
     return (
         <Layout>
             {/* <h1 onClick={handle}>{post.title}</h1> */}
             <div className="rows fxBetween">
-            <img src={post.author.picture} width="64px"
-            className={utilStyles.borderCircle}
-            alt={post.author.name} srcSet=""/>
-            <p className={`fxSelfEnd ${utilStyles.panel}`}>
-            {post.author.name} {new Date(post.date).toLocaleString()}
-            </p>
+              <img src={post.author.picture} width="64px" height="64"
+                className={utilStyles.borderCircle}
+                alt={post.author.name} srcSet=""/>
+              <p className={`fxSelfEnd ${utilStyles.panel}`}>
+              {post.author.name} {new Date(post.date).toLocaleString()}
+              </p>
             </div>
             <div dangerouslySetInnerHTML={{__html:`${md}`}}></div>
         </Layout>
@@ -45,7 +45,7 @@ export default function Markdown({post}: {post: FrontMetter}){
 type Params = { params: { slug: string[]|string } }
 
 export async function getStaticProps({ params }: Params) {
-  console.log("++++++[...slug] getStaticProps", params);
+  // console.log("++++++[...slug] getStaticProps", params);
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -79,7 +79,7 @@ export async function getStaticPaths(context:any) {
     )
   })
 
-  console.log("++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
+  // console.log("++++++[...slug] getStaticPaths", context, JSON.stringify(paths));
   return {
     fallback: false,
     paths,

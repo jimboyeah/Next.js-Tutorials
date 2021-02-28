@@ -25,6 +25,7 @@ export default function Layout({children, home, className}:Props) {
           )}.png?theme=light&md=0&fontSize=75px&images=${encodeURIComponent(basicImage)}`}
         />
         <meta name="og:title" content={siteTitle} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
       </Head>
       <div className={className ?? styles.container}>
       <header className={styles.header}>
@@ -53,7 +54,7 @@ export default function Layout({children, home, className}:Props) {
         </>
       )}
       </header>
-      <main className={styles.main}>{children}</main>
+      <main>{children}</main>
       {!home && (<div className="grid">
         <Link href="/">Go Back Home ...</Link>
       </div>
