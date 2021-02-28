@@ -111,7 +111,7 @@ export default function Home(props:any) {
       <style>body { display:block !important; }</style>
       <![endif]-->`}}></span>}
       
-      <style jsx="true">{`
+      <style jsx>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
